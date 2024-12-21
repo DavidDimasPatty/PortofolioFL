@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 123;
+    -webkit-animation: AnimationFade 0.5s ease forwards;
+    animation: AnimationFade 0.5s ease forwards;
+}
+
+@keyframes AnimationFadeOut {
+    0% {
+        background-color: transparent
+    }
+
+    100% {
+        background-color: #333
+    }
+}
+
+@keyframes AnimationFade {
+    0% {
+        background-color: #333
+    }
+
+    100% {
+        background-color: transparent
+    }
+}
+
+
+.header.scrolled{
+    -webkit-animation: AnimationFadeOut 1s ease forwards;
+    animation: AnimationFadeOut 1s ease forwards;
+    background-color: #333;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+.logo {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.logoLeft {
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style-type: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.open {
+        display: block;
+    }
+
+    .burger-btn {
+        display: block;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+        list-style-type: none;
+    }
+
+    .nav-links a {
+        padding: 0px;
+        text-align: center;
+    }
+}

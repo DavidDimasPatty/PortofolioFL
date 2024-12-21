@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../assets/home.css";
 import arrowImage from "../assets/image/arrow.png"
 import { motion } from "framer-motion";
+import Footer from "./Footer";
+import Floating from "./Floating";
+import HeaderNav from "./HeaderNav";
 
 const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
@@ -12,11 +15,12 @@ const Home = () => {
 
     return (
         <div className="wrapper-all">
+            <HeaderNav />
             <div className={`frontWelcome ${frontWelcome ? "active" : "hidden"}`}>
                 <div className="d-flex frontContent align-items-center justify-content-around">
                     <div className="row align-items-end content-left-front">
                         <div className="row">
-                            <h1>TriFusionCode</h1>
+                            <h3>TriFusionCode</h3>
                         </div>
                         <div className="row w-50">
                             <small>We can help you build your dream application!</small>
@@ -28,14 +32,14 @@ const Home = () => {
                 </div>
             </div>
 
-             <div className="mainHome">
+            <div className="mainHome">
                 <div className="homeHeader">
-                     <div className="contentHomeHeader">
+                    <div className="contentHomeHeader">
                         <div className="row">
                             <div className="col">
                                 <div className="row d-flex justify-content-center align-items-center">
                                     <div align="center">
-                                        <h1>TriSolutionCode</h1>
+                                        <h1>TriFusionCode</h1>
                                         <div align="center" className="col-md d-flex  justify-content-center align-items-center gap-3 mt-2">
                                             <motion.button
                                                 className="btn btn-light"
@@ -74,63 +78,32 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="col image-header-container">
-
-                            </div>
                         </div>
                     </div>
+                    <div className="wave"></div>
                 </div>
 
-
-                {/* <div className="homeBody">
-                    <div className="contentBody">
-                        <div className="pt-5" align="center">
-                            <h2>Our Services</h2>
-                            <small><u>Snippet of what we can do!</u></small>
-                        </div>
-                        <div className="content-service d-flex justify-content-center align-items-center">
-                            <div className="row-md-5 d-flex justify-content-center align-items-center gap-2 mt-3">
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 align="center">Website</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 align="center">Mobile App</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <h5 align="center">Machine Learning</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className="pt-5" align="center">
-                            <h2>Our Portofolio</h2>
-                            <small><u>Snippet of what we can do!</u></small>
-                        </div>
-
-                        <div className="pt-5" align="center">
-                            <h2>Our Team</h2>
-                            <small><u>Snippet of what we can do!</u></small>
-                        </div>
+                <div className="contentHomeBody">
+                    <div className="col">
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
+                        <h3>tes</h3>
 
                     </div>
-                </div>  */}
-            </div> 
+                </div>
+            </div>
+
+            <Floating />
+            <Footer />
         </div>
     );
 

@@ -1,0 +1,26 @@
+.logoFloat {
+    position: fixed; 
+    right: 0;        
+    bottom: 30px;   
+    z-index: 200;  
+}
+
+
+.logo-circ {
+    width: 120px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgLogo {
+    width: 40px;  
+    height: auto;
+    border-radius: 20%; 
+}
+
+.rowUp{
+    filter: invert(1) brightness(2);
+    background-color: white;
+}
