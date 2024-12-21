@@ -1,8 +1,11 @@
+.wrapper-all{
+width: 100vw !important;
+}
 .frontWelcome.active {
     position: fixed;
     visibility: visible;
-    -webkit-animation: slide-bottom 0.8s both;
-    animation: slide-bottom 0.8s both;
+    -webkit-animation: slide-bottom 0.8s both, AnimationName 4s ease infinite;
+    animation: slide-bottom 0.8s both, AnimationName 4s ease infinite;
 
 }
 
@@ -15,41 +18,75 @@
 .frontWelcome {
     width: 100vw;
     height: 100vh;
-    background-color: black;
     z-index: 999;
     color: white;
     position: fixed;
     top: 0;
     left: 0;
-background: linear-gradient(88deg, #8ecae6, #219ebc, #023047);
-background-size: 600% 600%;
-
--webkit-animation: AnimationName 4s ease infinite;
--moz-animation: AnimationName 4s ease infinite;
--o-animation: AnimationName 4s ease infinite;
-animation: AnimationName 4s ease infinite;
+    background: linear-gradient(88deg, #8ecae6, #219ebc, #023047);
+    background-size: 100% 100%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    -o-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-0%{background-position:0% 15%}
-50%{background-position:100% 86%}
-100%{background-position:0% 15%}
+    0% {
+        background-position: 0% 15%
+    }
+
+    50% {
+        background-position: 100% 86%
+    }
+
+    100% {
+        background-position: 0% 15%
+    }
 }
+
 @-moz-keyframes AnimationName {
-0%{background-position:0% 15%}
-50%{background-position:100% 86%}
-100%{background-position:0% 15%}
+    0% {
+        background-position: 0% 15%
+    }
+
+    50% {
+        background-position: 100% 86%
+    }
+
+    100% {
+        background-position: 0% 15%
+    }
 }
+
 @-o-keyframes AnimationName {
-0%{background-position:0% 15%}
-50%{background-position:100% 86%}
-100%{background-position:0% 15%}
+    0% {
+        background-position: 0% 15%
+    }
+
+    50% {
+        background-position: 100% 86%
+    }
+
+    100% {
+        background-position: 0% 15%
+    }
 }
+
 @keyframes AnimationName {
-0%{background-position:0% 15%}
-50%{background-position:100% 86%}
-100%{background-position:0% 15%}
+    0% {
+        background-position: 0% 15%
+    }
+
+    50% {
+        background-position: 100% 86%
+    }
+
+    100% {
+        background-position: 0% 15%
+    }
 }
+
 .frontContent {
     width: 100vw;
     height: 100vh;
@@ -119,12 +156,11 @@ small {
 }
 
 .mainHome {
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 .homeHeader {
-    width: 100vw;
+    width: 100%;
     background-color: black;
     height: 50vh;
 }
@@ -137,12 +173,6 @@ small {
 .contentHomeHeader {
     height: 100%;
     width: 100%;
-}
-
-#imgTeam1 {
-    width: 150%;
-    height: auto;
-    filter: grayscale(100%);
 }
 
 .image-header-container {
