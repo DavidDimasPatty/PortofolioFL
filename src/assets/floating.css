@@ -18,9 +18,14 @@
     width: 40px;  
     height: auto;
     border-radius: 20%; 
+    -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+    animation: pulsate-fwd 0.5s ease-in-out infinite both;
 }
 
 .rowUp{
     filter: invert(1) brightness(2);
     background-color: white;
+    width: 40px;  
+    height: auto;
+    border-radius: 20%; 
 }

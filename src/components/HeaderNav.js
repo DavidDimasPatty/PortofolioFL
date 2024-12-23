@@ -9,13 +9,14 @@ const HeaderNav = () => {
     };
 
     const handleScroll = ()=>{
-        if(window.scrollY>50){
+        if(window.scrollY>450){
             setIsScrolled(true);
         }
         else{
             setIsScrolled(false);
         }
     }
+
     useEffect(()=>{
         window.addEventListener('scroll',handleScroll);
         return () =>{
@@ -26,7 +27,7 @@ const HeaderNav = () => {
     
     return (
         <header className={`header ${isScrolled?'scrolled':''}`}>
-            <div className="logo">
+            <div className="logo" id="logo">
                 TriFusionCode
             </div>
             <button className="burger-btn" onClick={toggleMenu}>
@@ -36,37 +37,27 @@ const HeaderNav = () => {
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
                     <li>
-                        <a href="#" >                           
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" >
+                        <a href="#" className={`${isScrolled?'scrolled':' '}`}>
                             Tentang Kami
                         </a>
                     </li>
                     <li>
-                        <a href="#" >
+                        <a href="#" className={`${isScrolled?'scrolled':' '}`}>
                             Layanan
                         </a>
                     </li>
                     <li>
-                        <a href="#" >
-                            Klien Kami
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" >
+                        <a href="#"className={`${isScrolled?'scrolled':' '}`} >
                             FAQ
                         </a>
                     </li>
                     <li>
-                        <a href="#" >
+                        <a href="#" className={`${isScrolled?'scrolled':' '}`}>
                             Kontak
                         </a>
                     </li>
                     <li>
-                       {isMenuOpen?"Get Started":<button className="btn btn-info btn-xl">Get Started</button>}
+                       {isMenuOpen?"Get Started":<button className="getStarted">Get Started</button>}
                     </li>
                 </ul>
             </nav>

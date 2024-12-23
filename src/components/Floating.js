@@ -16,7 +16,7 @@ const Floating = () => {
                 <img src={whatsapp} className="imgLogo" />
             </div>
             <div className="logo-circ rowUpDiv">
-                <img src={arrowDown} className="imgLogo rowUp" />
+                <img src={arrowDown} className="rowUp"/>
             </div>
         </div>
     );

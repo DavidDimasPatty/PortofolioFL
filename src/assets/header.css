@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'LiberationSans';
+    src: url('./font/LiberationSans-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -7,7 +14,7 @@
     color: white;
     position: fixed;
     width: 100%;
-    z-index: 123;
+    z-index: 888;
     -webkit-animation: AnimationFade 0.5s ease forwards;
     animation: AnimationFade 0.5s ease forwards;
 }
@@ -18,13 +25,14 @@
     }
 
     100% {
-        background-color: #333
+        background-color: white;
+        color: black;
     }
 }
 
 @keyframes AnimationFade {
     0% {
-        background-color: #333
+        background-color:white
     }
 
     100% {
@@ -33,20 +41,22 @@
 }
 
 
-.header.scrolled{
-    -webkit-animation: AnimationFadeOut 1s ease forwards;
-    animation: AnimationFadeOut 1s ease forwards;
+.header.scrolled {
+    -webkit-animation: AnimationFadeOut 0.5s ease forwards;
+    animation: AnimationFadeOut 0.5s ease forwards;
     background-color: #333;
 }
 
-.header a{
+.header a {
     text-decoration: none;
     color: white;
 }
+
 .logo {
     font-size: 24px;
     margin-left: 20px;
     margin-bottom: 10px;
+    font-family: "LiberationSans";
 }
 
 .logoLeft {
@@ -68,13 +78,29 @@
     list-style-type: none;
 }
 
+.nav-links a.scrolled {
+    color: black;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
+    background:
+        linear-gradient(to right,
+            transparent,
+            transparent),
+        linear-gradient(to right,
+            #8ecae6,
+            #219ebc,
+            #023047);
+    background-size: 100% 1px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    background-size: 0 3px, 100% 3px;
 }
 
 .burger-btn {
@@ -85,6 +111,72 @@
     color: white;
     cursor: pointer;
 }
+
+.getStarted {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: grey;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  -webkit-animation: pulsate-fwd 0.8s ease-in-out infinite both;
+  animation: pulsate-fwd 0.8s ease-in-out infinite both;
+}
+
+.getStarted:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #8ecae6,
+    #219ebc,
+    #023047,
+    white
+  );
+
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.getStarted:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
 
 @media (max-width: 768px) {
     .nav-links {
