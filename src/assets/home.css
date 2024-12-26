@@ -370,23 +370,246 @@
 }
 
 .button-contact {
-    background-color: transparent;
-    border-color: white;
-}
+    min-width: 300px;
+    min-height: 60px;
+    display: inline-flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+  .button-contact::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  .button-contact:hover, 
+  .button-contact:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  .button-contact:hover::before, 
+  .button-contact:focus::before {
+    opacity: 1;
+  }
+  
+  .button-contact::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  .button-contact:hover::after, 
+  .button-contact:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
 
 .button-plan {
-    background-color: transparent;
-    border-color: white;
-}
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    min-width: 300px;
+    min-height: 50px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0px;
+    margin: 5px;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 1000px;
+  }
 
-.button-contact:hover {
-    transition: background-color 2s ease linear;
-}
+  .button-plan:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, transparent, #bbb);
+    animation: button-plan-left 2s linear infinite;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .button-plan:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #bbb);
+    animation: button-plan-top 2s linear infinite;
+    animation-delay: 1s;
+    transform: translateY(-100%);
+  }
+
+  .button-plan span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+  }
+
+  .button-plan span:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #bbb);
+    animation: button-plan-right 2s linear infinite;
+  }
+
+  .button-plan span:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #bbb);
+    animation: btn-22-bottom 2s linear infinite;
+    animation-delay: 1s;
+    transform: translateY(-100%)
+  }
+
+  .button-plan:hover:before {
+    background: linear-gradient(to left, transparent, red);
+  }
+
+  .button-plan:hover:after {
+    background: linear-gradient(to top, transparent, red);
+  }
+
+  .button-plan span:hover:before {
+    background: linear-gradient(to bottom, transparent, red);
+  }
+
+  .button-plan span:hover:after {
+    background: linear-gradient(to right, transparent, red);
+  }
+
+  .button-plan:hover {
+    color: red;
+  }
+
+  .button-plan:active:before {
+    background: linear-gradient(to left, transparent, #00a7fc);
+  }
+
+  .button-plan:active:after {
+    background: linear-gradient(to top, transparent, #00a7fc);
+  }
+
+  .button-plan span:active:before {
+    background: linear-gradient(to bottom, transparent, #00a7fc);
+  }
+
+  .button-plan span:active:after {
+    background: linear-gradient(to right, transparent, #00a7fc);
+  }
+
+  .button-plan:active {
+    color: #00a7fc;
+  }
+
+  @keyframes button-plan-top {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes button-plan-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes button-plan-bottom {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes button-plan-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+
 
 .slider-container {
     width: 100%;
     height: 300px;
-    /* Atur tinggi slider sesuai kebutuhan */
     margin: 0 auto;
 }
 
