@@ -39,8 +39,8 @@
 
 @keyframes movingObject {
     0% {
-        transform: translateX(200px);
-        transform: translateY(250px);
+        transform: translateX(-500px);
+        transform: translateY(-100px);
     }
 
     50% {
@@ -48,8 +48,8 @@
     }
 
     100% {
-        transform: translateX(-50px);
-        transform: translateY(-250px);
+        transform: translateX(-100vw);
+        transform: translateY(-100vh);
     }
 }
 
@@ -60,7 +60,6 @@
     background: linear-gradient(45deg, #8ecae6, #219ebc, #023047);
     background-size: 300% 300%;
     animation: gradientAnimation 6s ease infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,8 +75,8 @@
     background: rgba(255, 255, 255, 0.2);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     top: 20%;
-    left: -50px;
-    animation: movingObject 10s linear infinite;
+    left: -350px;
+    animation: movingObject 15s linear infinite;
     z-index: 1;
 }
 
@@ -89,19 +88,13 @@
     background: rgba(255, 255, 255, 0.3);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     top: 60%;
-    left: -150px;
-    animation: movingObject 10s linear infinite reverse;
+    left: -500px;
+    animation: movingObject 15s linear infinite reverse;
     z-index: 1;
 }
 
-.contentHomeHeader .row {
-    height: 100%;
-    width: 100%;
-}
-
 .contentHomeHeader {
-    height: 100%;
-    width: 100%;
+    z-index: 90;
 }
 
 
@@ -348,3 +341,58 @@
 }
 
 /*//////////////////////////////////////////////////////*/
+
+.bridgeBody {
+    position: absolute;
+    top: 50vh;
+    color: white;
+    right: 15vw;
+    overflow: hidden;
+}
+
+.contentBridge {
+    background: linear-gradient(88deg, #8ecae6, #219ebc, #023047);
+    width: 70vw;
+    height: 10vh;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.textBridge {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    white-space: nowrap;
+    transform: translateX(0);
+    will-change: transform;
+}
+
+.button-contact {
+    background-color: transparent;
+    border-color: white;
+}
+
+.button-plan {
+    background-color: transparent;
+    border-color: white;
+}
+
+.button-contact:hover {
+    transition: background-color 2s ease linear;
+}
+
+.slider-container {
+    width: 100%;
+    height: 300px;
+    /* Atur tinggi slider sesuai kebutuhan */
+    margin: 0 auto;
+}
+
+
+.imgHeader {
+    border-radius: 50%;
+    background-color: white;
+    width: 100%;
+}
