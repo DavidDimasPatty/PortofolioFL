@@ -1,0 +1,102 @@
+.faq-section {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-item {/* FAQ Section */
+    .faq-section {
+        background-color: #f4f8fb;
+        padding: 40px 20px;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+    
+    .faq-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #222;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    
+    /* FAQ Container */
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    
+    /* FAQ Item */
+    .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+    
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+    
+    /* Question */
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+        color: #007bff;
+    }
+    
+    /* Icon */
+    .faq-icon {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #007bff;
+        transition: transform 0.3s ease;
+    }
+    
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease, padding 0.1s ease;
+    padding: 0 15px;
+    color: #555;
+    line-height: 1.6;
+    border-left: 3px solid #007bff;
+}
+
+.faq-answer.open {
+    max-height: 200px; /* Tentukan tinggi maksimal saat terbuka */
+    padding: 10px 15px;
+}

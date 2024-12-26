@@ -1,0 +1,64 @@
+.our-working-process-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+.card-process {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card-process:hover {
+    transform: translateY(-5px);
+}
+
+.step-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+/* Card content */
+.step-card .card-body {
+    padding: 20px;
+}
+
+.step-card .card-body h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.step-card .card-body p {
+    font-size: 0.9rem;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; /* Menambahkan gap antar card */
+}
+
+/* Responsif untuk tampilan layar kecil */
+@media (max-width: 768px) {
+    .steps-container {
+        justify-content: space-around;
+    }
+
+    .step-card {
+        width: 100%;
+        max-width: 300px; /* Membatasi lebar card pada layar kecil */
+    }
+}
+
+/* Responsif untuk tampilan layar besar */
+@media (min-width: 768px) {
+    .step-card {
+        width: 300px;
+    }
+}
+

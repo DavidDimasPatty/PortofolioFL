@@ -1,0 +1,28 @@
+.why-choose-us-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+    overflow-x: hidden;
+}
+
+.content-why {
+    width: 100%;
+    max-width: 100%; /* Maksimal lebar slider, sesuaikan dengan desain */
+}
+
+.custom-slick .slick-list {
+    padding: 20px 0;
+}
+
+.custom-slick .slick-slide {
+    padding: 0 5px; /* Jarak antar slide */
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center; /* Pastikan card berada di tengah */
+    align-items: center; /* Vertikal center jika perlu */
+}
+
+.slick-list {
+    overflow: hidden; /* Mencegah scroll horizontal */
+}
