@@ -19,5 +19,56 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100%; /* Agar isi card selalu di tengah */
+    height: 100%;
+    /* Agar isi card selalu di tengah */
+}
+
+.our-service-section .btn {
+    position: relative;
+    display: inline-flex; /* Gunakan flexbox */
+    justify-content: center; /* Pastikan teks di tengah secara horizontal */
+    align-items: center; /* Pastikan teks di tengah secara vertikal */
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 17px;
+    letter-spacing: 0.045em;
+}
+
+.our-service-section .btn svg {
+    position: absolute;
+    top: 1;
+    left: 0;
+}
+
+.our-service-section .btn svg rect {
+    stroke-width: 4;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.our-service-section .btn span {
+    background: #8ecae6; /* Warna awal */
+    background: -moz-linear-gradient(left, #8ecae6 0%, #219ebc 50%, #023047 100%); /* Gradien untuk Firefox */
+    background: -webkit-linear-gradient(left, #8ecae6 0%, #219ebc 50%, #023047 100%); /* Gradien untuk Webkit (Chrome, Safari) */
+    background: linear-gradient(to right, #8ecae6 0%, #219ebc 50%, #023047 100%); /* Gradien standar */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ecae6', endColorstr='#023047', GradientType=1);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.our-service-section .btn:hover svg rect {
+    stroke-width: 4;
+    stroke-dasharray: 196, 543;
+    stroke-dashoffset: 437;
 }
