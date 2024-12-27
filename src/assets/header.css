@@ -30,13 +30,24 @@
     }
 }
 
-@keyframes AnimationFade {
+
+@keyframes AnimationFadeButton {
     0% {
-        background-color:white
+        background-color:black;
     }
 
     100% {
-        background-color: transparent
+        background-color: transparent;
+    }
+}
+
+@keyframes AnimationFade {
+    0% {
+        background-color:white;
+    }
+
+    100% {
+        background-color: transparent;
     }
 }
 
@@ -116,18 +127,28 @@
   padding: 0.6em 2em;
   border: none;
   outline: none;
-  color: rgb(255, 255, 255);
-  background: grey;
+  color: white; 
   cursor: pointer;
   position: relative;
+  border: white solid;
   z-index: 0;
   border-radius: 10px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  -webkit-animation: pulsate-fwd 0.8s ease-in-out infinite both;
-  animation: pulsate-fwd 0.8s ease-in-out infinite both;
+  -webkit-animation: pulsate-fwd 0.8s ease-in-out infinite both, AnimationFadeButton 0.5s ease forwards;
+  animation: pulsate-fwd 0.8s ease-in-out infinite both, AnimationFadeButton 0.5s ease forwards;
 }
+
+.getStarted.scrolled {
+    background-color: black; 
+    color: white;
+  }
+  
+  .getStarted.scrolled::after {
+    background-color: black; 
+  }
+  
 
 .getStarted:before {
   content: "";
@@ -135,10 +156,8 @@
     45deg,
     #8ecae6,
     #219ebc,
-    #023047,
     white
   );
-
   position: absolute;
   top: -2px;
   left: -2px;
@@ -153,29 +172,31 @@
   border-radius: 10px;
 }
 
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 
 .getStarted:after {
   z-index: -1;
   content: "";
+  background-color: transparent;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #222;
   left: 0;
   top: 0;
   border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
 }
+
+@keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
 
 
 @media (max-width: 768px) {

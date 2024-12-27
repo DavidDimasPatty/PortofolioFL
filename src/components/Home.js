@@ -1,17 +1,62 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../assets/home.css";
 import arrowImage from "../assets/image/arrow.png"
-import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Floating from "./Floating";
 import HeaderNav from "./HeaderNav";
+import OurService from "./OurService";
+import OurWorkingProcess from "./OurWorkingProcess";
+import WhyTfc from "./WhyTfc";
+import FaQ from "./FaQ";
+import imageBanner from "../assets/image/imgBannerPure.png"
+import Slider from "react-slick";
 
 const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
+    const textRef = useRef(null);
+    const containerRef = useRef(null);
+    let animationFrameId = null;
 
     const toggleFront = () => {
         setFrontWelcome(!frontWelcome);
     }
+
+    const settings = {
+        infinite: true, // Memungkinkan looping gambar
+        speed: 500, // Durasi transisi antar gambar
+        slidesToShow: 1, // Jumlah gambar yang ditampilkan pada satu waktu
+        slidesToScroll: 1, // Jumlah gambar yang digulirkan pada satu kali scroll
+        autoplay: true, // Otomatis memutar slider
+        autoplaySpeed: 2000, // Kecepatan autoplay (dalam milidetik)
+        pauseOnHover: true, // Menjeda autoplay saat mouse hover
+    };
+
+    useEffect(() => {
+        let startPos = 0;
+        const speed = 4;
+
+        const animate = () => {
+            if (textRef.current && containerRef.current) {
+                const textWidth = textRef.current.offsetWidth / 2;
+                startPos -= speed;
+                if (startPos <= -textWidth) {
+                    startPos += textWidth;
+                }
+
+                textRef.current.style.transform = `translateX(${startPos}px)`;
+            }
+
+            animationFrameId = requestAnimationFrame(animate);
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        };
+    }, []);
 
     return (
         <div className="wrapper-all">
@@ -32,58 +77,51 @@ const Home = () => {
 
             <div className="mainHome">
                 <div className="homeHeader">
-                    <div className="contentHomeHeader">
-                        <div className="row">
-                            <div className="col">
-                                <div className="row d-flex justify-content-center align-items-center">
-                                    <div align="start">
-                                        <h1>TriFusionCode</h1>
-                                       
-                                    </div>
-                                </div>
+                    <div className="contentHomeHeader row d-flex justify-content-center align-items-center">
+                        <div className="col justify-content-center align-items-center p-5">
+
+                            <div className="row-md-6 mb-3 text-nowrap">
+                                <h1>Bikin Aplikasi Murah dan Terpercaya?</h1>
                             </div>
+
+                            <div className="row-md-5 mb-5">
+                                <h1>Gass Aja Disini!!!</h1>
+                            </div>
+
+                            <div className="row-md-5 d-flex justify-content-start align-items-center gap-5">
+                                <button className="btn btn-dark button-contact">Contact Us!</button>
+                                <button className="btn btn-dark button-plan"><span>See Our Plan</span></button>
+                            </div>
+
+                        </div>
+                        <div className="col">
+                            <img src={imageBanner} className="imgHeader" />
                         </div>
                     </div>
-                   
+
+
+                </div>
+                <div className="bridgeBody">
+                    <div className="contentBridge" ref={containerRef}>
+                        <div className="textBridge" ref={textRef}>
+                            <h2>Website Development</h2>
+                            <h2>App Development</h2>
+                            <h2>Desktop Development</h2>
+                            <h2>Security App</h2>
+                            <h2>Website Development</h2>
+                            <h2>App Development</h2>
+                            <h2>Desktop Development</h2>
+                            <h2>Security App</h2>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="contentHomeBody">
                     <div className="col">
-                        <h3>tes123</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3> <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
-                        <h3>tes</h3>
+                        <OurService />
+                        <WhyTfc />
+                        <OurWorkingProcess />
+                        <FaQ />
                     </div>
                 </div>
             </div>

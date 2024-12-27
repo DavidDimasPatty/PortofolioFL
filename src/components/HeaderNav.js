@@ -57,7 +57,7 @@ const HeaderNav = () => {
                         </a>
                     </li>
                     <li>
-                       {isMenuOpen?"Get Started":<button className="getStarted">Get Started</button>}
+                       {isMenuOpen?"Get Started":<button className={`${isScrolled?'getStarted scrolled':'getStarted'}`}>Get Started</button>}
                     </li>
                 </ul>
             </nav>
