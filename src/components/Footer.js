@@ -1,86 +1,103 @@
 import react from "react";
 import "../assets/footer.css";
-
+import logoTFC from "../assets/image/logoTFC.png"
+import Marquee from "react-fast-marquee";
 const Footer = () => {
 
     return (
         <div className="footer">
-            <div className="row footerrow">
-                <div className="col">
-                    <div className="row">
-                        <b>LOGO</b>
-                    </div>
-                    <div className="row linkFooter">
-                        <span>@ 2024 TriFusionCode All Rights Reserved. Published by <a href="https://www.TriFusionCode.co.id" target="_blank"> <span>www.TriFusionCode.co.id </span></a></span>
-                    </div>
-                    <div className="row">
-
+            <div className="col justify-content-start pb-5">
+                <div className="footerHeader">
+                    <h1 className="w-50">Apakah Anda Masih Ragu?</h1>
+                    <h3>Kirim email ke kami dan mulai konsultasi!</h3>
+                    <div className="d-flex justify-content-center align-items-center formFooter gap-2">
+                        <input type="text" className="form-control" name="email" placeholder="Ketik Email Anda" />
+                        <button className="btn btn-light">Kirim Email</button>
                     </div>
                 </div>
+                <div className="borderSpace">
 
-                <div className="col">
-                    <div className="row">
-                        <b>Quick Links</b>
-                    </div>
-                    <div className="row linkFooter">
-                        <span><a href="https://www.TriFusionCode.co.id" target="_blank"> <span>Home </span></a></span>
-                    </div>
-                    <div className="row linkFooter">
-                        <span><a href="https://www.TriFusionCode.co.id" target="_blank"> <span>Tentang Kami </span></a></span>
-                    </div>
-                    <div className="row linkFooter">
-                        <span><a href="https://www.TriFusionCode.co.id" target="_blank"> <span>Klien Kami </span></a></span>
-                    </div>
-                    <div className="row linkFooter">
-                        <span><a href="https://www.TriFusionCode.co.id" target="_blank"> <span>Kontak </span></a></span>
-                    </div>
-                    <div className="row linkFooter">
-                        <span><a href="https://www.TriFusionCode.co.id" target="_blank"> <span>Kebijakan Privasi </span></a></span>
-                    </div>
                 </div>
+            </div>
 
-                <div className="col">
-                    <div className="row">
-                        <b>Our Services</b>
+            <div className="col d-flex justify-content-start pb-5">
+                <div className="row footerBridge">
+                    <div className="col d-flex justify-content-center align-items-center">
+                        <img src={logoTFC} className="imgFooter" />
                     </div>
-                    <div className="row">
-                        <span>Jasa Pembuatan Website</span>
-                    </div>
-                    <div className="row">
-                        <span>Jasa SEO Bergaransi</span>
-                    </div>
-                    <div className="row">
-                        <span>Jasa Iklan Google Ads</span>
-                    </div>
-                    <div className="row">
-                        <span>Jasa Sosial Media Ads</span>
-                    </div>
-                    <div className="row">
-                        <span>Jasa Pembuatan Aplikasi</span>
-                    </div>
-                    <div className="row">
-                        <span>ASAIN Creative Digital Agency</span>
-                    </div>
-                </div>
-
-                <div className="col">
-                    <div className="row">
-                        <b>Contact Us</b>
-                    </div>
-                    <div className="row">
-                        <b>Need Support?</b>
-                    </div>
-                    <div className="row">
-                        <span>Phone : 08123141414</span>
-                    </div>
-                    <div className="row">
-                        <span>WhatsApp : 08124123123</span>
-                    </div>
-                    <div className="row">
-                        <span>Email : sales@asian.co.id</span>
+                    <div className="col d-flex justify-content-center align-items-center">
+                        <div className="row">
+                            <h1 className="w-75 mb-4">Make Your Dream Application Comes True!</h1>
+                            <h5 className="w-75 mb-4">Kami percaya semua orang berhak mendapatkan cita-citanya terwujud. Kami berusaha ada disitu untuk membantu anda.</h5>
+                            <h5 className="w-25 mb-4"></h5>
+                            <div className="wrapperCall">
+                                <button className="btn btn-light buttonCall">Hubungi Kami</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div className="row footerrow">
+                <div className="col-md-3">
+                    <h5>TriFusionCode</h5>
+                </div>
+                <div className="col-md-3">
+                    <h5><i className="bi bi-laptop text-white" /> We Help Your Dreams!</h5>
+                </div>
+                <div className="col-md-2">
+                    <div className="row">
+                        <a href="#"><h5>Our Service</h5></a>
+                        <a href="#"><h5>Why Us?</h5></a>
+                        <a href="#"><h5>Our Working Proccess</h5></a>
+                    </div>
+                </div>
+                <div className="col-md-2">
+                    <div className="row">
+                        <a href="#"><h5>Instagram</h5></a>
+                        <a href="#"><h5>Twitter</h5></a>
+                        <a href="#"><h5>Facebook</h5></a>
+                        <a href="#"><h5>LinkedIn</h5></a>
+                    </div>
+                </div>
+
+                <div className="col-md-2">
+                    <div className="row">
+                        <a href="#"><h5>FAQ</h5></a>
+                        <a href="#"><h5>CONTACT</h5></a>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row footerClose">
+                <div className="col-md-6">
+                    TriFusionCode &#169; 2024
+                </div>
+                <div className="col-md-2">
+                    Our Section
+                </div>
+                <div className="col-md-2">
+                    Our Media Sosial
+                </div>
+                <div className="col-md-2">
+                    Help Center
+                </div>
+            </div>
+
+            <div className="footerEnd d-flex justify-content-center align-items-center">
+                <div className="borderSpaceEnd d-flex justify-content-center align-items-center gap-3">
+                    <Marquee speed={100} pauseOnHover={true}>
+                        <h5>Make Your Dreams Comes True!</h5>
+                        <h5>Customize Your Web</h5>
+                        <h5>Design Your Web</h5>
+                        <h5>Build Website</h5>
+                        <h5>Mobile App</h5>
+                        <h5>Security Application</h5>
+                        <h5>Dekstop Application</h5>
+                    </Marquee>
+                </div>
+            </div>
+
         </div>
     );
 }

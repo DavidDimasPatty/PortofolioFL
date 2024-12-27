@@ -21,16 +21,6 @@ const Home = () => {
         setFrontWelcome(!frontWelcome);
     }
 
-    const settings = {
-        infinite: true, // Memungkinkan looping gambar
-        speed: 500, // Durasi transisi antar gambar
-        slidesToShow: 1, // Jumlah gambar yang ditampilkan pada satu waktu
-        slidesToScroll: 1, // Jumlah gambar yang digulirkan pada satu kali scroll
-        autoplay: true, // Otomatis memutar slider
-        autoplaySpeed: 2000, // Kecepatan autoplay (dalam milidetik)
-        pauseOnHover: true, // Menjeda autoplay saat mouse hover
-    };
-
     useEffect(() => {
         let startPos = 0;
         const speed = 4;
@@ -80,11 +70,11 @@ const Home = () => {
                     <div className="contentHomeHeader row d-flex justify-content-center align-items-center">
                         <div className="col justify-content-center align-items-center p-5">
 
-                            <div className="row-md-6 mb-3 text-nowrap">
+                            <div className="row-md-6 mb-3 text-nowrap header-text1">
                                 <h1>Bikin Aplikasi Murah dan Terpercaya?</h1>
                             </div>
 
-                            <div className="row-md-5 mb-5">
+                            <div className="row-md-5 mb-5 header-text2">
                                 <h1>Gass Aja Disini!!!</h1>
                             </div>
 
