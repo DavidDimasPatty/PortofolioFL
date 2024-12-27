@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/header.css";
+import logoTFC from "../assets/image/logoTFC.png"
 
 const HeaderNav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,9 @@ const HeaderNav = () => {
     };
 
     const handleScroll = ()=>{
-        if(window.scrollY>450){
+        const scrollThresholdInVh = 50; 
+        const thresholdInPx = (scrollThresholdInVh / 100) * window.innerHeight;
+        if(window.scrollY>thresholdInPx){
             setIsScrolled(true);
         }
         else{
@@ -27,8 +30,8 @@ const HeaderNav = () => {
     
     return (
         <header className={`header ${isScrolled?'scrolled':''}`}>
-            <div className="logo" id="logo">
-                TriFusionCode
+            <div className={`logo${isScrolled?'-scrolled':' '} d-flex justify-content-center align-items-center`} id="logo">
+               <img src={logoTFC} width={"60px"}/>
             </div>
             <button className="burger-btn" onClick={toggleMenu}>
                 ☰

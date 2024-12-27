@@ -466,7 +466,6 @@
     position: relative;
     z-index: 1;
     transition: all 0.5s ease-in-out;
-    border-radius: 0px;
     margin: 5px;
     background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
     padding: 0;
@@ -481,8 +480,8 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to left, transparent, #bbb);
+    height: 3px;
+    background: linear-gradient(to left, transparent, #268ccf);
     animation: button-plan-left 2s linear infinite;
     transition: 0.5s ease-in-out;
   }
@@ -494,8 +493,7 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to top, transparent, #bbb);
-    animation: button-plan-top 2s linear infinite;
+    background: linear-gradient(to top, transparent, #268ccf);
     animation-delay: 1s;
     transform: translateY(-100%);
   }
@@ -505,7 +503,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    padding: 6px;
+    padding: 10px;
   }
 
   .button-plan span:after {
@@ -514,8 +512,8 @@
     top: 0px;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #bbb);
+    height: 3px;
+    background: linear-gradient(to right, transparent, #268ccf);
     animation: button-plan-right 2s linear infinite;
   }
 
@@ -526,46 +524,30 @@
     right: 12px;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #bbb);
-    animation: btn-22-bottom 2s linear infinite;
+    background: linear-gradient(to bottom, transparent, #268ccf);
     animation-delay: 1s;
     transform: translateY(-100%)
   }
 
   .button-plan:hover:before {
-    background: linear-gradient(to left, transparent, red);
-  }
-
-  .button-plan:hover:after {
-    background: linear-gradient(to top, transparent, red);
-  }
-
-  .button-plan span:hover:before {
-    background: linear-gradient(to bottom, transparent, red);
+    background: linear-gradient(to left, transparent, blue);
   }
 
   .button-plan span:hover:after {
-    background: linear-gradient(to right, transparent, red);
+    background: linear-gradient(to right, transparent, blue);
   }
 
   .button-plan:hover {
-    color: red;
+    color: blue;
   }
 
   .button-plan:active:before {
-    background: linear-gradient(to left, transparent, #00a7fc);
+    background: linear-gradient(to left, transparent, blue);
   }
 
-  .button-plan:active:after {
-    background: linear-gradient(to top, transparent, #00a7fc);
-  }
-
-  .button-plan span:active:before {
-    background: linear-gradient(to bottom, transparent, #00a7fc);
-  }
 
   .button-plan span:active:after {
-    background: linear-gradient(to right, transparent, #00a7fc);
+    background: linear-gradient(to right, transparent, blue);
   }
 
   .button-plan:active {
@@ -615,7 +597,16 @@
 
 
 .imgHeader {
-    border-radius: 50%;
-    background-color: white;
-    width: 100%;
+}
+
+.header-text1{
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.header-text2{
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-style: oblique;
 }
