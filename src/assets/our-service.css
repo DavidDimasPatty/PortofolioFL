@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
 }
 
 .card-service {
@@ -17,7 +18,7 @@
     background-color: #ffffff;
     position: relative;
     padding-top: 0px;
-    margin-bottom: 60px; /* Menambah jarak antar card */
+    margin-bottom: 0px; /* Menambah jarak antar card */
     height: 100%; /* Pastikan card tetap memiliki tinggi yang konsisten */
     background-size: cover; /* Menyusun gambar untuk menutupi seluruh area */
     background-position: center center; /* Memastikan gambar diposisikan di tengah */

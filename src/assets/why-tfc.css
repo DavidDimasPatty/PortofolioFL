@@ -1,7 +1,42 @@
 .why-choose-us-section {
-    background-color: #ffffff;
+    background-color: #8ecae6;
+    background-size: 500% 500%;
+    /* animation: gradientAnimation 4s ease infinite; */
     padding: 50px 0;
-    overflow-x: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.wave-top {
+    top: -50px;
+    transform: rotate(180deg); /* Membalik gelombang untuk bagian atas */
+}
+
+.wave-bottom {
+    bottom: -50px;
+}
+
+/* Animasi Gradien */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%); /* Gelombang bergerak ke kiri */
+    }
 }
 
 .content-why {
@@ -14,10 +49,11 @@
 }
 
 .custom-slick .slick-slide {
-    padding: 0 5px; /* Jarak antar slide */
+    /* padding: 0 5px; Jarak antar slide */
+    padding: 20px 20px 20px 17px;
 }
 
-.slick-slide {
+.slick-slider {
     display: flex;
     justify-content: center; /* Pastikan card berada di tengah */
     align-items: center; /* Vertikal center jika perlu */

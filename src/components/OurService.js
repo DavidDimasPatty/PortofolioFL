@@ -16,6 +16,21 @@ const services = [
         image: mobileAppImage
     },
     {
+        title: "Mobile App",
+        description: "Build user-friendly mobile apps for Android and iOS platforms.",
+        image: mobileAppImage
+    },
+    {
+        title: "Mobile App",
+        description: "Build user-friendly mobile apps for Android and iOS platforms.",
+        image: mobileAppImage
+    },
+    {
+        title: "Mobile App",
+        description: "Build user-friendly mobile apps for Android and iOS platforms.",
+        image: mobileAppImage
+    },
+    {
         title: "Machine Learning",
         description: "Implement intelligent systems using advanced machine learning techniques.",
         image: machineLearningImage
@@ -25,10 +40,10 @@ const services = [
 const OurService = () => {
     return (
         <>
-            <div className="our-service-section pt-5">
-                <h2 align="center" className="mb-5 pb-5">Our Services</h2>
+            <div className="our-service-section pb-5">
+                <h2 align="center" className="mb-5 pb-3">Our Services</h2>
                 <div className="content-service d-flex justify-content-center align-items-center">
-                    <div className="row row-cols-1 row-cols-md-3 g-4" style={{ width: "80%" }}>
+                    <div className="row row-cols-1 row-cols-md-4 g-5" style={{ width: "80%" }}>
                         {services.map((service, index) => (
                             <div key={index} className="col d-flex justify-content-center align-items-center">
                                 <div className="card card-service" style={{ backgroundImage: `url(${service.image})` }}>
