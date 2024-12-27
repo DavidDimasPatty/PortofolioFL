@@ -12,11 +12,14 @@
     width: 100%;
     height: auto;
     background-color: white;
+    overflow: hidden;
 }
 
 .wave-top {
     top: -50px;
     transform: rotate(180deg); /* Membalik gelombang untuk bagian atas */
+    margin: 0;
+    padding: 0;
 }
 
 .wave-bottom {
