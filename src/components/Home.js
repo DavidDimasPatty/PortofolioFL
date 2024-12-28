@@ -5,12 +5,16 @@ import Footer from "./Footer";
 import Floating from "./Floating";
 import HeaderNav from "./HeaderNav";
 import OurService from "./OurService";
+import OurPlan from "./OurPlan";
 import OurWorkingProcess from "./OurWorkingProcess";
 import WhyTfc from "./WhyTfc";
 import FaQ from "./FaQ";
-import imageBanner from "../assets/image/imgBannerPure.png"
+import imageBanner from "../assets/image/imgBannerPure.png";
+import imageWebsite from "../assets/image/website.png";
+import imageDekstop from "../assets/image/desktop.png";
 import Slider from "react-slick";
-
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
     const textRef = useRef(null);
@@ -85,12 +89,32 @@ const Home = () => {
 
                         </div>
                         <div className="col">
-                            <img src={imageBanner} className="imgHeader" />
+                            <Carousel
+                                showArrows={false}
+                                showIndicators={false}
+                                showStatus={false}
+                                axis={"horizontal"}
+                                autoPlay={true}
+                                interval={3000}
+                                infiniteLoop={true}
+                                showThumbs={false}
+                                width={"15vw"}                         
+                                >
+                                <div className="imageCarrousel">
+                                    <img src={imageBanner} />
+                                </div>
+                                <div  className="imageCarrousel">
+                                    <img src={imageWebsite} />
+                                </div>
+                                <div  className="imageCarrousel">
+                                    <img src={imageDekstop} />
+                                </div>
+                            </Carousel>
                         </div>
                     </div>
-
-
                 </div>
+
+
                 <div className="bridgeBody">
                     <div className="contentBridge" ref={containerRef}>
                         <div className="textBridge" ref={textRef}>
@@ -110,7 +134,8 @@ const Home = () => {
                     <div className="col">
                         <OurService />
                         <WhyTfc />
-                        <OurWorkingProcess />
+                        <OurPlan />
+                        <OurWorkingProcess />           
                         <FaQ />
                     </div>
                 </div>
