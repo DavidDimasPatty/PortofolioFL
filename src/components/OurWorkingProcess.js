@@ -5,14 +5,14 @@ const OurWorkingProcess = () => {
     return (
         <>
             {/* Our Working Process Section */}
-            <div className="our-working-process-section pt-5 pb-5">
+            <div className="our-working-process-section mt-5 pt-5 pb-5">
                 <header>
                     {/* <p>Worked on all modern browers</p> */}
                     <h1>Our Working Process</h1>
                 </header>
 
                 <ul className="timeline">
-                    
+
                     <li>
                         <div className="direction-r">
                             <div className="flag-wrapper">
@@ -24,7 +24,7 @@ const OurWorkingProcess = () => {
                         </div>
                     </li>
 
-                    
+
                     <li>
                         <div className="direction-l">
                             <div className="flag-wrapper">
@@ -36,7 +36,7 @@ const OurWorkingProcess = () => {
                         </div>
                     </li>
 
-                    
+
                     <li>
                         <div className="direction-r">
                             <div className="flag-wrapper">
@@ -60,7 +60,7 @@ const OurWorkingProcess = () => {
                         </div>
                     </li>
 
-                    
+
                     <li>
                         <div className="direction-r">
                             <div className="flag-wrapper">
