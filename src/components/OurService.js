@@ -43,7 +43,7 @@ const OurService = () => {
             <div className="our-service-section pb-5">
                 <h2 align="center" className="mb-5 pb-3">Our Services</h2>
                 <div className="content-service d-flex justify-content-center align-items-center">
-                    <div className="row row-cols-1 row-cols-md-4 g-5" style={{ width: "80%" }}>
+                    <div className="row row-cols-1 row-cols-md-4 g-5" style={{ width: "100%" }}>
                         {services.map((service, index) => (
                             <div key={index} className="col d-flex justify-content-center align-items-center">
                                 <div className="card card-service" style={{ backgroundImage: `url(${service.image})` }}>
@@ -53,8 +53,8 @@ const OurService = () => {
                                         alt={`${service.title} image`}
                                     />
                                     <div className="card-body">
-                                        <h5 className="card-title">{service.title}</h5>
-                                        <p className="card-text">{service.description}</p>
+                                        <h5 className="card-title" style={{ color:'#023047' }}>{service.title}</h5>
+                                        <p className="card-text" style={{ color:'#023047' }}>{service.description}</p>
                                     </div>
                                 </div>
                             </div>
