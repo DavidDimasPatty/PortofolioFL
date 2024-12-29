@@ -64,7 +64,7 @@ const Footer = () => {
                 <div className="col-md-2">
                     <div className="row">
                         <a href="#"><h5>FAQ</h5></a>
-                        <a href="#"><h5>CONTACT</h5></a>
+                        <a href="#"><h5>Contact</h5></a>
                     </div>
                 </div>
             </div>
