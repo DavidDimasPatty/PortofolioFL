@@ -1,3 +1,4 @@
+
 .wrapperContainer {
     width: 100%;
 }
@@ -6,7 +7,11 @@
     perspective: 800px;
 }
 
-.textBridge {}
+.contentCard {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
 
 .pricingTitle {
     font-family: 'Raleway', sans-serif;
@@ -17,7 +22,7 @@
     color: #023047;
 }
 
-.customCard {
+/* .customCard {
     background: linear-gradient(-45deg, rgba(129, 230, 217, 1) 0%, rgb(22, 146, 134) 18%, rgb(46, 104, 180) 10%, rgba(129, 230, 217, 1) 90%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -32,6 +37,58 @@
     -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     position: relative;
+    backface-visibility: hidden;
+}
+
+.learnMore {
+    background: linear-gradient(-45deg, rgb(22, 146, 134) 100%, rgb(46, 104, 180) 0%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    width: 249px;
+    height: 350px;
+    color: white;
+    -webkit-animation: slide-fwd-center-out 0.45s ease-out both;
+    animation: slide-fwd-center-out 0.45s ease-out both;
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    z-index: -1;
+    opacity: 0;
+    border-radius: 20px;
+    overflow-y: auto;
+    transform: rotateY( 180deg );
+}
+
+.containerOurPlan.active .contentCard {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+}
+   */
+
+.learnMore::-webkit-scrollbar {
+    width: 12px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.learnMore::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.learnMore::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 2px solid rgba(22, 146, 134, 0.3);
+}
+
+.learnMore::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.learnMore.active {
+    transform: rotateY(180deg);
 }
 
 
@@ -47,38 +104,156 @@
     font-weight: 700;
 }
 
-.customCard:hover {
-    -webkit-animation: slide-fwd-center 0.45s ease-out both;
-    animation: slide-fwd-center 0.45s ease-out both;
+.card-container {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    position: relative;
 }
 
+.cardFlipper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
 
-.customCard.flipped {
+.card-container.active .cardFlipper {
     transform: rotateY(180deg);
 }
 
-.learnMore {
-    position: absolute;
-    top: 0;
-    left: 0;
+.customCard {
+    background: linear-gradient(-45deg, rgba(129, 230, 217, 1) 0%, rgb(22, 146, 134) 18%, rgb(46, 104, 180) 10%, rgba(129, 230, 217, 1) 90%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     height: 100%;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
     backface-visibility: hidden;
 }
 
 
 .learnMore {
-    background-color: #f8f8f8;
-    color: #333;
+    background: linear-gradient(-45deg, rgb(22, 146, 134) 0%, rgb(46, 104, 180) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    backface-visibility: hidden;
     transform: rotateY(180deg);
-    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
 }
 
-.learn-more {
-    margin-top: 20px;
-    padding: 10px 20px;
+.contentLearnMore {
+    width: 100%;
+    padding: 10px;
+}
+
+.contentLearnMore h3 {
+    text-align: start;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.wrapCloseBtn {
+    width: 100%;
+}
+
+.closeBtnCrd {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    margin-top: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
 }
+
+.closeBtnCrd:hover {
+    transform: scale(1.2);
+}
+
+.wrapEmailBtn {
+    width: 100%;
+}
+
+.EmailBtn {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.EmailBtn::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    top: 11px;
+    left: -5px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    transition: bottom 0.3s ease, left 0.3s ease;
+}
+
+.EmailBtn:hover {
+    transform: scale(1.2);
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+}
+
+.EmailBtn:hover::before {
+    transform: scale(1);
+    top: 12px;
+    left: -12px;
+
+}
+
+
+.regBorder {
+    border-bottom: 2px solid white;
+    width: 70%;
+}
+
+.benefitCardSection {
+    margin-top: 20px;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.bridgeCardSection {
+    border-top: 2px solid white;
+}
+
+.servicesCardSection {
+    margin-top: 20px;
+}
+
 
 @-webkit-keyframes slide-fwd-center {
     0% {
