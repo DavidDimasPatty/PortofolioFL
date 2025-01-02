@@ -6,22 +6,8 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            <div className="col justify-content-start pb-5">
-                <div className="footerHeader">
-                    <h1 className="w-50">Apakah Anda Masih Ragu?</h1>
-                    <h3>Kirim email ke kami dan mulai konsultasi!</h3>
-                    <div className="d-flex justify-content-center align-items-center formFooter gap-2">
-                        <input type="text" className="form-control" name="email" placeholder="Ketik Email Anda" />
-                        <button className="btn btn-light">Kirim Email</button>
-                    </div>
-                </div>
-                <div className="borderSpace">
-
-                </div>
-            </div>
-
             <div className="col d-flex justify-content-start pb-5">
-                <div className="row footerBridge">
+                <div className="row footerBridge mt-5">
                     <div className="col d-flex justify-content-center align-items-center">
                         <img src={logoTFC} className="imgFooter" />
                     </div>
@@ -39,10 +25,7 @@ const Footer = () => {
             </div>
 
             <div className="row footerrow">
-                <div className="col-md-3">
-                    <h5>TriFusionCode</h5>
-                </div>
-                <div className="col-md-3">
+                <div className="col-md-6 d-flex justify-content-start">
                     <h5><i className="bi bi-laptop text-white" /> We Help Your Dreams!</h5>
                 </div>
                 <div className="col-md-2">
