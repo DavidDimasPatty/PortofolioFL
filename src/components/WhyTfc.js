@@ -54,10 +54,17 @@ const WhyTfc = () => {
         // cssEase: "linear",
         responsive: [
             {
-                breakpoint: 768, // Maksimal ukuran layar 768px
+                breakpoint: 1024, // Lebih besar dari 768px, tampilkan 2 kartu
                 settings: {
-                    slidesToShow: 1, // Hanya tampilkan 1 kartu
-                    centerMode: false, // Nonaktifkan centering untuk lebih optimal
+                    slidesToShow: 2,
+                    centerMode: true,
+                },
+            },
+            {
+                breakpoint: 767,  // Maksimal ukuran layar 768px, tampilkan 1 kartu
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,  // Nonaktifkan centering di layar kecil
                 },
             },
         ],

@@ -109,14 +109,3 @@
         }
     }
 }
-
-
-@media (max-width: 768px) {
-    .custom-slick .slick-slider {
-        margin: 0 auto; /* Pastikan kartu di tengah */
-    }
-
-    .row h1 {
-        padding-top: 20px;
-    }
-}
