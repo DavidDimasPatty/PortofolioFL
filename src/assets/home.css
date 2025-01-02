@@ -361,9 +361,6 @@
 }
 
 .textBridge {
-    display: flex;
-    align-items: center;
-    gap: 100px;
     white-space: nowrap;
     transform: translateX(0);
     will-change: transform;
@@ -383,46 +380,47 @@
     font-weight: 700;
     color: #313133;
     background: #4FD1C5;
-    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
     border: none;
     border-radius: 1000px;
-    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
     position: relative;
     padding: 10px;
-    }
-  
-  .button-contact::before {
+}
+
+.button-contact::before {
     content: '';
     border-radius: 1000px;
     min-width: calc(300px + 12px);
     min-height: calc(60px + 12px);
     border: 6px solid #00FFCB;
-    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: all .3s ease-in-out 0s;
-  }
-  
-  .button-contact:hover, 
-  .button-contact:focus {
+}
+
+.button-contact:hover,
+.button-contact:focus {
     color: #313133;
     transform: translateY(-6px);
-  }
-  
-  .button-contact:hover::before, 
-  .button-contact:focus::before {
+}
+
+.button-contact:hover::before,
+.button-contact:focus::before {
     opacity: 1;
-  }
-  
-  .button-contact::after {
+}
+
+.button-contact::after {
     content: '';
-    width: 30px; height: 30px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
     border: 6px solid #00FFCB;
     position: absolute;
@@ -431,26 +429,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
     animation: ring 1.5s infinite;
-  }
-  
-  .button-contact:hover::after, 
-  .button-contact:focus::after {
+}
+
+.button-contact:hover::after,
+.button-contact:focus::after {
     animation: none;
     display: none;
-  }
-  
-  @keyframes ring {
+}
+
+@keyframes ring {
     0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
     }
+
     100% {
-      width: 300px;
-      height: 300px;
-      opacity: 0;
+        width: 300px;
+        height: 300px;
+        opacity: 0;
     }
-  }
+}
 
 .button-plan {
     cursor: pointer;
@@ -467,14 +466,14 @@
     z-index: 1;
     transition: all 0.5s ease-in-out;
     margin: 5px;
-    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
     padding: 0;
     overflow: hidden;
     border: none;
     border-radius: 1000px;
-  }
+}
 
-  .button-plan:before {
+.button-plan:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -484,9 +483,9 @@
     background: linear-gradient(to left, transparent, #268ccf);
     animation: button-plan-left 2s linear infinite;
     transition: 0.5s ease-in-out;
-  }
-  
-  .button-plan:after {
+}
+
+.button-plan:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -496,17 +495,17 @@
     background: linear-gradient(to top, transparent, #268ccf);
     animation-delay: 1s;
     transform: translateY(-100%);
-  }
+}
 
-  .button-plan span {
+.button-plan span {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
     padding: 10px;
-  }
+}
 
-  .button-plan span:after {
+.button-plan span:after {
     content: "";
     position: absolute;
     top: 0px;
@@ -515,9 +514,9 @@
     height: 3px;
     background: linear-gradient(to right, transparent, #268ccf);
     animation: button-plan-right 2s linear infinite;
-  }
+}
 
-  .button-plan span:before {
+.button-plan span:before {
     content: "";
     position: absolute;
     top: 0px;
@@ -527,66 +526,73 @@
     background: linear-gradient(to bottom, transparent, #268ccf);
     animation-delay: 1s;
     transform: translateY(-100%)
-  }
+}
 
-  .button-plan:hover:before {
+.button-plan:hover:before {
     background: linear-gradient(to left, transparent, blue);
-  }
+}
 
-  .button-plan span:hover:after {
+.button-plan span:hover:after {
     background: linear-gradient(to right, transparent, blue);
-  }
+}
 
-  .button-plan:hover {
+.button-plan:hover {
     color: blue;
-  }
+}
 
-  .button-plan:active:before {
+.button-plan:active:before {
     background: linear-gradient(to left, transparent, blue);
-  }
+}
 
 
-  .button-plan span:active:after {
+.button-plan span:active:after {
     background: linear-gradient(to right, transparent, blue);
-  }
+}
 
-  .button-plan:active {
+.button-plan:active {
     color: #00a7fc;
-  }
+}
 
-  @keyframes button-plan-top {
+@keyframes button-plan-top {
     0% {
-      transform: translateY(100%);
+        transform: translateY(100%);
     }
+
     100% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
-  }
-  @keyframes button-plan-left {
+}
+
+@keyframes button-plan-left {
     0% {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
+
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  }
-  @keyframes button-plan-bottom {
+}
+
+@keyframes button-plan-bottom {
     0% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
+
     100% {
-      transform: translateY(100%);
+        transform: translateY(100%);
     }
-  }
-  @keyframes button-plan-right {
+}
+
+@keyframes button-plan-right {
     0% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
+
     100% {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
-  }
-  
+}
+
 
 
 .slider-container {
@@ -596,23 +602,22 @@
 }
 
 
-.imgHeader {
+.imgHeader {}
+
+.header-text1 {
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif; 
+    font-weight: bolder;
 }
 
-.header-text1{
-  text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
+.header-text2 {
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-style: oblique;
+    font-weight: bolder;
 }
 
-.header-text2{
-  text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
-  font-style: oblique;
+.imageCarrousel {
+    height: 100%;
+    width: 100%;
 }
-
-.imageCarrousel{
-   height: 100%;
-   width: 100%;
-}
-

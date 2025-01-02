@@ -15,46 +15,31 @@ import imageDekstop from "../assets/image/desktop.png";
 import Slider from "react-slick";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Marquee from "react-fast-marquee";
 const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
-    const textRef = useRef(null);
-    const containerRef = useRef(null);
-    let animationFrameId = null;
+    const [isChecked, setIsChecked] = useState(false);
+    const [lastClickTime, setLastClickTime] = useState(Date.now()); 
 
     const toggleFront = () => {
         setFrontWelcome(!frontWelcome);
     }
+    
+    const handleCheckboxChange = (checked) => {
+        setIsChecked(checked);
+    };
 
-    useEffect(() => {
-        let startPos = 0;
-        const speed = 4;
+  useEffect(() => {
+        const timer = setTimeout(() => {
+            toggleFront();
+        }, 3000);
 
-        const animate = () => {
-            if (textRef.current && containerRef.current) {
-                const textWidth = textRef.current.offsetWidth / 2;
-                startPos -= speed;
-                if (startPos <= -textWidth) {
-                    startPos += textWidth;
-                }
-
-                textRef.current.style.transform = `translateX(${startPos}px)`;
-            }
-
-            animationFrameId = requestAnimationFrame(animate);
-        };
-
-        animationFrameId = requestAnimationFrame(animate);
-
-        return () => {
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-            }
-        };
-    }, []);
+        return () => clearTimeout(timer);
+    }, [lastClickTime]);
 
     return (
         <div className="wrapper-all">
-            <HeaderNav />
+            <HeaderNav onCheckboxChange={handleCheckboxChange}/>
             <div className={`frontWelcome ${frontWelcome ? "active" : "hidden"}`}>
                 <div className="d-flex frontContent align-items-center justify-content-around">
                     <div className="row align-items-center justify-content-center content-left-front">
@@ -75,11 +60,11 @@ const Home = () => {
                         <div className="col justify-content-center align-items-center p-5">
 
                             <div className="row-md-6 mb-3 text-nowrap header-text1">
-                                <h1>Bikin Aplikasi Murah dan Terpercaya?</h1>
+                                <h1>{isChecked ? 'Bikin Aplikasi Murah dan Terpercaya?':'Build Cheap and Trusted Application?'}</h1>
                             </div>
 
                             <div className="row-md-5 mb-5 header-text2">
-                                <h1>Gass Aja Disini!!!</h1>
+                                <h1>{isChecked?'Gass Aja Disini!!!':'We Can Provide That!!'}</h1>
                             </div>
 
                             <div className="row-md-5 d-flex justify-content-start align-items-center gap-5">
@@ -98,15 +83,15 @@ const Home = () => {
                                 interval={3000}
                                 infiniteLoop={true}
                                 showThumbs={false}
-                                width={"15vw"}                         
-                                >
+                                width={"15vw"}
+                            >
                                 <div className="imageCarrousel">
                                     <img src={imageBanner} />
                                 </div>
-                                <div  className="imageCarrousel">
+                                <div className="imageCarrousel">
                                     <img src={imageWebsite} />
                                 </div>
-                                <div  className="imageCarrousel">
+                                <div className="imageCarrousel">
                                     <img src={imageDekstop} />
                                 </div>
                             </Carousel>
@@ -115,18 +100,16 @@ const Home = () => {
                 </div>
 
 
-                <div className="bridgeBody">
-                    <div className="contentBridge" ref={containerRef}>
-                        <div className="textBridge" ref={textRef}>
-                            <h2>Website Development</h2>
-                            <h2>App Development</h2>
-                            <h2>Desktop Development</h2>
-                            <h2>Security App</h2>
-                            <h2>Website Development</h2>
-                            <h2>App Development</h2>
-                            <h2>Desktop Development</h2>
-                            <h2>Security App</h2>
-                        </div>
+                <div className="bridgeBody d-flex justify-content-center align-items-center">
+                    <div className="contentBridge  d-flex justify-content-center align-items-center gap-3">
+                        <Marquee speed={100} pauseOnHover={true}>
+                            <div className="d-flex gap-5">
+                                <h2>Website Development</h2>
+                                <h2>App Development</h2>
+                                <h2>Desktop Development</h2>
+                                <h2 className="me-5">Security App</h2>
+                            </div>
+                        </Marquee>
                     </div>
                 </div>
 
@@ -135,7 +118,7 @@ const Home = () => {
                         <OurService />
                         <WhyTfc />
                         <OurPlan />
-                        <OurWorkingProcess />           
+                        <OurWorkingProcess />
                         <FaQ />
                     </div>
                 </div>

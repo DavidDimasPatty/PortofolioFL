@@ -1,17 +1,22 @@
-import react from "react";
+import react,{useState} from "react";
 import "../assets/ourplan.css"
 
 const OurPlan = () => {
+    const [flipped, setFlipped] = useState(false);
 
+    const handleFlip = () => {
+      setFlipped(!flipped); // Membalikkan status flip
+    };
+    
     return (
         <div>
-            <h1 align="center" className="mb-4">
-                Our Plan
+            <h1 align="center" className="mb-4 pricingTitle">
+                Pricing
             </h1>
             <div className="col">
                 <div className="wrapperContainer row d-flex justify-content-center align-items-center gap-2">
-                    <div className="containerOurPlan col-md-3 d-flex justify-content-center align-items-center">
-                        <div className="customCard">
+                    <div className="containerOurPlan col-md-3">
+                        <div className={`customCard ${flipped ? 'flipped' : ''}`}>
                             <div className="customCardHeader">
                                 <div className="wrapperIconPrice">
                                     <i className="bi bi-send"></i>
@@ -35,11 +40,15 @@ const OurPlan = () => {
                                 </div>
                             </div>
                             <div className="customCardFooter" align="center">
-                                <button className="startNowPlan">Start Now!</button>
+                                <button className="startNowPlan" onClick={handleFlip}>Learn More</button>
                             </div>
                             <div className="floatingTextPlan">
                                 CHEAPER
                             </div>
+                        </div>
+                        <div className="learnMore" id="learnMore1">
+                            <h3>Learn More Content</h3>
+                            <p>This is the content that shows up when the card is flipped.</p>
                         </div>
                     </div>
                     <div className="containerOurPlan col-md-3 d-flex justify-content-center align-items-center">
@@ -67,7 +76,7 @@ const OurPlan = () => {
                                 </div>
                             </div>
                             <div className="customCardFooter" align="center">
-                                <button className="startNowPlan">Start Now!</button>
+                                <button className="startNowPlan">Learn More</button>
                             </div>
                             <div className="floatingTextPlan2">
                                 STANDARD
@@ -75,7 +84,7 @@ const OurPlan = () => {
                         </div>
                     </div>
                     <div className="containerOurPlan col-md-3 d-flex justify-content-center align-items-center">
-                    <div className="customCard3">
+                        <div className="customCard3">
                             <div className="customCardHeader">
                                 <div className="wrapperIconPrice3">
                                     <i className="bi bi-rocket-takeoff"></i>
@@ -99,7 +108,7 @@ const OurPlan = () => {
                                 </div>
                             </div>
                             <div className="customCardFooter" align="center">
-                                <button className="startNowPlan">Start Now!</button>
+                                <button className="startNowPlan">Learn More</button>
                             </div>
                             <div className="floatingTextPlan3">
                                 BEST OFFER
