@@ -22,50 +22,6 @@
     color: #023047;
 }
 
-/* .customCard {
-    background: linear-gradient(-45deg, rgba(129, 230, 217, 1) 0%, rgb(22, 146, 134) 18%, rgb(46, 104, 180) 10%, rgba(129, 230, 217, 1) 90%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: 250px;
-    height: 350px;
-    border-radius: 20px;
-    color: white;
-    -webkit-animation: slide-fwd-center-out 0.45s ease-out both;
-    animation: slide-fwd-center-out 0.45s ease-out both;
-    margin: 20px;
-    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    position: relative;
-    backface-visibility: hidden;
-}
-
-.learnMore {
-    background: linear-gradient(-45deg, rgb(22, 146, 134) 100%, rgb(46, 104, 180) 0%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: absolute;
-    width: 249px;
-    height: 350px;
-    color: white;
-    -webkit-animation: slide-fwd-center-out 0.45s ease-out both;
-    animation: slide-fwd-center-out 0.45s ease-out both;
-    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    z-index: -1;
-    opacity: 0;
-    border-radius: 20px;
-    overflow-y: auto;
-    transform: rotateY( 180deg );
-}
-
-.containerOurPlan.active .contentCard {
-    transform: rotateY( 180deg ) ;
-    transition: transform 0.5s;
-}
-   */
-
 .learnMore::-webkit-scrollbar {
     width: 12px;
     padding: 10px;
@@ -91,8 +47,55 @@
     transform: rotateY(180deg);
 }
 
+.learnMore2::-webkit-scrollbar {
+    width: 12px;
+    padding: 10px;
+    border-radius: 10px;
+}
 
+.learnMore2::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
 
+.learnMore2::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 2px solid rgba(22, 146, 134, 0.3);
+}
+
+.learnMore2::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.learnMore2.active {
+    transform: rotateY(180deg);
+}
+
+.learnMore3::-webkit-scrollbar {
+    width: 12px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.learnMore3::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.learnMore3::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 2px solid rgba(22, 146, 134, 0.3);
+}
+
+.learnMore3::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.learnMore3.active {
+    transform: rotateY(180deg);
+}
 .customCardHeader {
     text-align: center;
     padding: 10px;
@@ -140,9 +143,46 @@
     backface-visibility: hidden;
 }
 
+.cardFlipper:hover{
+    transform: scale(1.1);
+}
 
 .learnMore {
     background: linear-gradient(-45deg, rgb(22, 146, 134) 0%, rgb(46, 104, 180) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+}
+
+.learnMore2 {
+    background: linear-gradient(-45deg,  rgb(22, 101, 146) 0%, rgb(46, 59, 180) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+    -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
+}
+
+.learnMore3 {
+    background: linear-gradient(-45deg, rgb(22, 61, 146) 0%, rgb(59, 46, 180) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 100%;
@@ -428,17 +468,17 @@
     background: linear-gradient(-45deg, rgb(126, 208, 240) 0%, rgb(22, 101, 146) 18%, rgb(46, 59, 180) 10%, rgb(129, 156, 230) 90%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    width: 250px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     color: white;
-    -webkit-animation: slide-fwd-center-out 0.45s ease-out both;
-    animation: slide-fwd-center-out 0.45s ease-out both;
-    margin: 20px;
     box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    backface-visibility: hidden;
 }
 
 .customCard2:hover {
@@ -495,17 +535,17 @@
     background: linear-gradient(-45deg, rgb(126, 147, 240) 0%, rgb(22, 61, 146) 18%, rgb(59, 46, 180) 10%, rgb(159, 129, 230) 90%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    width: 250px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     color: white;
-    -webkit-animation: slide-fwd-center-out 0.45s ease-out both;
-    animation: slide-fwd-center-out 0.45s ease-out both;
-    margin: 20px;
     box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     -webkit-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
     -moz-box-shadow: 12px 27px 56px -16px rgba(59, 147, 214, 1);
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    backface-visibility: hidden;
 }
 
 .customCard3:hover {
