@@ -1,102 +1,176 @@
 .faq-section {
-    background-color: #ffffff;
-    padding: 30px 0;
-}
+    box-sizing: border-box;
 
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.faq-item {/* FAQ Section */
-    .faq-section {
-        background-color: #f4f8fb;
-        padding: 40px 20px;
-        font-family: 'Arial', sans-serif;
-        color: #333;
-    }
-    
-    .faq-title {
-        text-align: center;
-        font-size: 2rem;
-        color: #222;
-        margin-bottom: 30px;
-        font-weight: bold;
-    }
-    
-    /* FAQ Container */
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-    
-    /* FAQ Item */
-    .faq-item {
-        margin-bottom: 15px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 15px;
-    }
-    
-    .faq-item:last-child {
-        border-bottom: none;
-    }
-    
-    /* Question */
-    .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        padding: 10px 0;
-        transition: color 0.3s ease;
-    }
-    
-    .faq-question:hover {
-        color: #007bff;
-    }
-    
-    /* Icon */
-    .faq-icon {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #007bff;
-        transition: transform 0.3s ease;
-    }
-    
-    margin-bottom: 5px;
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.faq-question {
-    font-weight: bold;
-    color: #333;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.1s ease, padding 0.1s ease;
-    padding: 0 15px;
-    color: #555;
-    line-height: 1.6;
-    border-left: 3px solid #007bff;
-}
+    .accordion {
+        display: flex;
+        max-width: 1010px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(-45deg, rgb(46, 59, 180) 10%, rgb(129, 156, 230) 90%);
+        border-radius: 25px;
+        padding: 45px 90px 0 60px;
+    }
 
-.faq-answer.open {
-    max-height: 200px; /* Tentukan tinggi maksimal saat terbuka */
-    padding: 10px 15px;
+    .accordion .image-box {
+        height: 360px;
+        width: 300px;
+    }
+
+    .accordion .image-box img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: bottom;
+        filter: drop-shadow(0px 0px 5px white);
+    }
+
+    .accordion .accordion-text {
+        width: 60%;
+    }
+
+    .accordion .accordion-text .title {
+        font-size: 35px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .accordion .accordion-text .faq-text {
+        margin-top: 25px;
+        padding-left: 0;
+        height: 263px;
+        overflow-y: auto;
+    }
+
+    .faq-text::-webkit-scrollbar {
+        display: none;
+    }
+
+    .accordion .accordion-text li {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .accordion-text li .question-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .accordion-text li .question-arrow .question {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .accordion-text li .question-arrow .arrow {
+        font-size: 15px;
+        color: white;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .accordion-text li.showAnswer .question-arrow .arrow {
+        transform: rotate(-180deg);
+    }
+
+    .accordion-text li:hover .question-arrow .question,
+    .accordion-text li:hover .question-arrow .arrow {
+        color: black;
+    }
+
+    .accordion-text li.showAnswer .question-arrow .question,
+    .accordion-text li.showAnswer .question-arrow .arrow {
+        color: black;
+    }
+
+    .accordion-text li .line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        margin: 10px 0;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-text li p {
+        width: 92%;
+        font-size: 15px;
+        font-weight: 500;
+        color: whitesmoke;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .accordion-text li.showAnswer p {
+        max-height: 500px;
+        /* Sesuaikan dengan ketinggian teks maksimal */
+        opacity: 1;
+    }
+
+    @media (max-width: 994px) {
+        padding: 40px 20px;
+
+        .accordion {
+            max-width: 100%;
+            padding: 45px 60px 0 60px;
+        }
+
+        .accordion .image-box {
+            height: 360px;
+            width: 220px;
+        }
+
+        .accordion .image-box img {
+            object-position: bottom;
+            filter: drop-shadow(0px 0px 5px white);
+        }
+
+        .accordion .accordion-text {
+            width: 63%;
+        }
+    }
+
+    @media (max-width: 820px) {
+        .accordion {
+            flex-direction: column;
+        }
+
+        .accordion .image-box {
+            height: 360px;
+            width: 300px;
+            background: white;
+            width: 100%;
+            border-radius: 25px;
+            padding: 30px 30px 0 30px;
+        }
+
+        .accordion .image-box img {
+            object-position: bottom;
+            filter: drop-shadow(0px 0px 0px white);
+        }
+
+        .accordion .accordion-text {
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 538px) {
+        .accordion {
+            padding: 25px 25px 0 25px;
+        }
+
+        .accordion-text li p {
+            width: 92%;
+
+        }
+    }
 }

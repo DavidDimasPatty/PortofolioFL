@@ -100,7 +100,7 @@ const WhyTfc = () => {
                         fill="url(#gradient-top)" class="animated-path" fill-opacity="1"></path>
                 </svg>
             </div>
-            <div className="why-choose-us-section">
+            <div className="why-choose-us-section pt-5 pb-5">
 
                 <div className="row">
                     <div className="col-12 col-md-4 ps-5 pe-5 d-flex align-items-center justify-content-center">
