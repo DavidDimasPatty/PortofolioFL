@@ -31,7 +31,7 @@ const Floating = () => {
     const body = "Halo, ini adalah isi email yang telah diatur sebelumnya.";
     const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    const phoneNumber = "6281311974915";
+    const phoneNumber = "62812312";
     const defaultMessage = "Halo, saya tertarik dengan layanan Anda.";
 
     const openWhatsApp = () => {

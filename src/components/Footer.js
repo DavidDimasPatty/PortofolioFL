@@ -3,7 +3,7 @@ import "../assets/footer.css";
 import logoTFC from "../assets/image/logoTFC.png"
 import Marquee from "react-fast-marquee";
 const Footer = () => {
-    const phoneNumber = "6281311974915";
+    const phoneNumber = "62123123";
     const defaultMessage = "Halo, saya tertarik dengan layanan Anda.";
     const openWhatsApp = () => {
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
