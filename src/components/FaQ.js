@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../assets/faq.css";
+import image from "../assets/image/faq-image.png"
 
 const FaQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -31,30 +32,28 @@ const FaQ = () => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+
     return (
         <div className="faq-section">
-            <h2 className="faq-title" align="center">Frequently Asked Questions (FAQ)</h2>
-            <div className="faq-container">
-                {faqData.map((item, index) => (
-                    <div key={index} className="faq-item">
-                        <div
-                            className="faq-question"
-                            onClick={() => handleClick(index)}
-                        >
-                            <span>{item.question}</span>
-                            <span className="faq-icon">
-                                {activeIndex === index ? "−" : "+"}
-                            </span>
-                        </div>
-                        <div
-                            className={`faq-answer ${
-                                activeIndex === index ? "open" : ""
-                            }`}
-                        >
-                            {item.answer}
-                        </div>
-                    </div>
-                ))}
+            <div className="accordion">
+                <div className="image-box">
+                    <img src={image} alt="" />
+                </div>
+                <div className="accordion-text">
+                    <div className="title">FAQ</div>
+                    <ul className="faq-text">
+                        {faqData.map((item, index) => (
+                            <li key={index} onClick={() => handleClick(index)} className={`${activeIndex === index ? "showAnswer" : ""}`}>
+                                <div className="question-arrow">
+                                    <span className="question">{item.question}</span>
+                                    <i className="bi bi-chevron-down arrow"></i>
+                                </div>
+                                <p>{item.answer}</p>
+                                <span className="line"></span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

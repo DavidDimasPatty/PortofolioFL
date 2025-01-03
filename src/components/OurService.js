@@ -7,7 +7,7 @@ import machineLearningImage from "../assets/image/our-service-machine-learning.j
 const services = [
     {
         title: "Website",
-        description: "Develop responsive and scalable websites tailored to your needs.",
+        description: "Develop responsive and kjhjkh jkh kj hjkhjkh jkhjk hkjh jkh jkh jkh jk hjk hjkhj hkj hkjh kscalable websites tailored to your needs.",
         image: websiteImage
     },
     {
@@ -43,7 +43,7 @@ const OurService = () => {
             <div className="our-service-section pb-5">
                 <h2 align="center" className="mb-5 pb-3">Our Services</h2>
                 <div className="content-service d-flex justify-content-center align-items-center">
-                    <div className="row row-cols-1 row-cols-md-4 g-5" style={{ width: "100%" }}>
+                    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5" style={{ width: "100%" }}>
                         {services.map((service, index) => (
                             <div key={index} className="col d-flex justify-content-center align-items-center">
                                 <div className="card card-service" style={{ backgroundImage: `url(${service.image})` }}>

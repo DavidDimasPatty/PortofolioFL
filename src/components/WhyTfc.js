@@ -54,10 +54,17 @@ const WhyTfc = () => {
         // cssEase: "linear",
         responsive: [
             {
-                breakpoint: 768, // Maksimal ukuran layar 768px
+                breakpoint: 1024, // Lebih besar dari 768px, tampilkan 2 kartu
                 settings: {
-                    slidesToShow: 1, // Hanya tampilkan 1 kartu
-                    centerMode: false, // Nonaktifkan centering untuk lebih optimal
+                    slidesToShow: 2,
+                    centerMode: true,
+                },
+            },
+            {
+                breakpoint: 767,  // Maksimal ukuran layar 768px, tampilkan 1 kartu
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,  // Nonaktifkan centering di layar kecil
                 },
             },
         ],
@@ -100,7 +107,7 @@ const WhyTfc = () => {
                         fill="url(#gradient-top)" class="animated-path" fill-opacity="1"></path>
                 </svg>
             </div>
-            <div className="why-choose-us-section">
+            <div className="why-choose-us-section pt-5 pb-5">
 
                 <div className="row">
                     <div className="col-12 col-md-4 ps-5 pe-5 d-flex align-items-center justify-content-center">
