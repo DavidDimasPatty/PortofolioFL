@@ -3,7 +3,7 @@ import "../assets/footer.css";
 import logoTFC from "../assets/image/logoTFC.png"
 import Marquee from "react-fast-marquee";
 const Footer = () => {
-    const phoneNumber = "62123123";
+    const phoneNumber = "6281311974915";
     const defaultMessage = "Halo, saya tertarik dengan layanan Anda.";
     const openWhatsApp = () => {
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
 
             <div className="row footerrow">
-                <div className="col-md-6 d-flex justify-content-start">
+                {/* <div className="col-md-6 d-flex justify-content-start">
                     <h5><i className="bi bi-laptop text-white" /> We Help Your Dreams!</h5>
                 </div>
                 <div className="col-md-2">
@@ -58,11 +58,11 @@ const Footer = () => {
                         <a href="#"><h5>FAQ</h5></a>
                         <a href="#"><h5>Contact</h5></a>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="row footerClose">
-                <div className="col-md-6">
+                {/* <div className="col-md-6">
                     TriFusionCode &#169; 2024
                 </div>
                 <div className="col-md-2">
@@ -73,6 +73,27 @@ const Footer = () => {
                 </div>
                 <div className="col-md-2">
                     Help Center
+                </div> */}
+                <div className="col-md-4">
+                    <div className="header1Footer">GENERAL INFORMATIONS</div>
+                    <div className="col">
+                        <button className="buttonFooterLink">Our Service</button>
+                        <button className="buttonFooterLink">Why Us?</button>
+                        <button className="buttonFooterLink">Our Working Process</button>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="header1Footer">Follow TFC ON SOCIAL MEDIA</div>
+                    <div className="col">
+                        <button className="buttonFooterLink">INSTAGRAM</button>
+                        <button className="buttonFooterLink">FACEBOOK</button>
+                        <button className="buttonFooterLink">LINKEDIN</button>
+                        <button className="buttonFooterLink">TWITTER</button>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    TriFusionCode is a cutting-edge IT solutions provider dedicated to empowering businesses with innovative technology services. 
+                    Our mission is to bridge the gap between business challenges and digital excellence through tailored, efficient, and scalable solutions.
                 </div>
             </div>
 

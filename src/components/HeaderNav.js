@@ -38,7 +38,7 @@ const HeaderNav = ({ onCheckboxChange }) => {
             <div className={`logo${isScrolled ? '-scrolled' : ' '} d-flex justify-content-center align-items-center`} id="logo">
                 <img src={logoTFC} width={"60px"} />
             </div>
-            <button className="burger-btn" onClick={toggleMenu}>
+            <button className={`burger-btn ${isScrolled?`scrolled` : ''}`} onClick={toggleMenu}>
                 ☰
             </button>
 
@@ -60,7 +60,7 @@ const HeaderNav = ({ onCheckboxChange }) => {
                         </a>
                     </li>
                     <li>
-                        <div class="toggle-button-cover">
+                        <div className={`toggle-button-cover ${isScrolled ? 'scrolled' : ' '}`} >
                             <div class="button-cover">
                                 <div class="butSWitch" id="button-10">
                                     <input type="checkbox" class="checkbox" onChange={handleChange}/>

@@ -266,7 +266,7 @@
     color: #fff;
 }
 
-#button-10 .checkbox:checked~.knobs::before  {
+#button-10 .checkbox:checked~.knobs::before {
     background-image: url("./image/idpng.png");
     background-size: 60px;
     background-repeat: no-repeat;
@@ -280,7 +280,7 @@
 
 #button-10 .checkbox:checked~.knobs::after {
     background-image: none;
-    content: 'IND';
+    content: 'IDN';
     top: 0px;
     color: black;
 }
@@ -321,6 +321,10 @@
         display: block;
     }
 
+    .burger-btn.scrolled {
+        color: black;
+    }
+
     .nav-links ul {
         flex-direction: column;
         gap: 10px;
@@ -330,5 +334,13 @@
     .nav-links a {
         padding: 0px;
         text-align: center;
+    }
+
+    .toggle-button-cover{
+        color: white;
+    }
+
+    .toggle-button-cover.scrolled{
+        color: black;
     }
 }

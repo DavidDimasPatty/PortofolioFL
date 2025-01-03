@@ -32,7 +32,7 @@ const Home = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             toggleFront();
-        }, 3000);
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, [lastClickTime]);
@@ -73,7 +73,7 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className="col">
+                        <div className="col colCarrousel">
                             <Carousel
                                 showArrows={false}
                                 showIndicators={false}

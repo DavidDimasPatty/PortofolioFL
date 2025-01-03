@@ -112,6 +112,7 @@
     height: 350px;
     perspective: 1000px;
     position: relative;
+    margin: 50px;
 }
 
 .cardFlipper {
