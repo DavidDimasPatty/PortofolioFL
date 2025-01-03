@@ -19,17 +19,17 @@ import Marquee from "react-fast-marquee";
 const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
     const [isChecked, setIsChecked] = useState(false);
-    const [lastClickTime, setLastClickTime] = useState(Date.now()); 
+    const [lastClickTime, setLastClickTime] = useState(Date.now());
 
     const toggleFront = () => {
         setFrontWelcome(!frontWelcome);
     }
-    
+
     const handleCheckboxChange = (checked) => {
         setIsChecked(checked);
     };
 
-  useEffect(() => {
+    useEffect(() => {
         const timer = setTimeout(() => {
             toggleFront();
         }, 3000);
@@ -39,7 +39,7 @@ const Home = () => {
 
     return (
         <div className="wrapper-all">
-            <HeaderNav onCheckboxChange={handleCheckboxChange}/>
+            <HeaderNav onCheckboxChange={handleCheckboxChange} />
             <div className={`frontWelcome ${frontWelcome ? "active" : "hidden"}`}>
                 <div className="d-flex frontContent align-items-center justify-content-around">
                     <div className="row align-items-center justify-content-center content-left-front">
@@ -60,16 +60,16 @@ const Home = () => {
                         <div className="col justify-content-center align-items-center p-5">
 
                             <div className="row-md-6 mb-3 text-nowrap header-text1">
-                                <h1>{isChecked ? 'Bikin Aplikasi Murah dan Terpercaya?':'Build Cheap and Trusted Application?'}</h1>
+                                <h1>{isChecked ? 'Bikin Aplikasi Murah dan Terpercaya?' : 'Build Cheap and Trusted Application?'}</h1>
                             </div>
 
                             <div className="row-md-5 mb-5 header-text2">
-                                <h1>{isChecked?'Gass Aja Disini!!!':'We Can Provide That!!'}</h1>
+                                <h1>{isChecked ? 'Gass Aja Disini!!!' : 'We Can Provide That!!'}</h1>
                             </div>
 
                             <div className="row-md-5 d-flex justify-content-start align-items-center gap-5">
-                                <button className="btn btn-dark button-contact">Contact Us!</button>
-                                <button className="btn btn-dark button-plan"><span>See Our Plan</span></button>
+                                <button className="btn btn-dark button-contact" onClick={()=>window.location.href="#footer"}>Contact Us!</button>
+                                <button className="btn btn-dark button-plan" onClick={()=>window.location.href="#plan"}><span>See Our Plan</span></button>
                             </div>
 
                         </div>
@@ -115,10 +115,13 @@ const Home = () => {
 
                 <div className="contentHomeBody">
                     <div className="col">
+                        <div id="ourService" />
                         <OurService />
                         <WhyTfc />
                         <OurPlan />
+                        <div id="tentangKami" />
                         <OurWorkingProcess />
+                        <div id="FAQ" />
                         <FaQ />
                     </div>
                 </div>

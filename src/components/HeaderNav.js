@@ -45,17 +45,17 @@ const HeaderNav = ({ onCheckboxChange }) => {
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
                     <li>
-                        <a href="#" className={`${isScrolled ? 'scrolled' : ' '}`}>
+                        <a href="#tentangKami" className={`${isScrolled ? 'scrolled' : ' '}`}>
                             Tentang Kami
                         </a>
                     </li>
                     <li>
-                        <a href="#" className={`${isScrolled ? 'scrolled' : ' '}`}>
+                        <a href="#ourService" className={`${isScrolled ? 'scrolled' : ' '}`}>
                             Layanan
                         </a>
                     </li>
                     <li>
-                        <a href="#" className={`${isScrolled ? 'scrolled' : ' '}`} >
+                        <a href="#FAQ" className={`${isScrolled ? 'scrolled' : ' '}`} >
                             FAQ
                         </a>
                     </li>
@@ -73,7 +73,7 @@ const HeaderNav = ({ onCheckboxChange }) => {
                         </div>
                     </li>
                     <li>
-                        {isMenuOpen ? "Get Started" : <button className={`${isScrolled ? 'getStarted scrolled' : 'getStarted'}`}>Get Started</button>}
+                        {isMenuOpen ? "Get Started" : <button className={`${isScrolled ? 'getStarted scrolled' : 'getStarted'}`} onClick={()=>window.location.href="#plan"}>Get Started</button>}
                     </li>
                 </ul>
             </nav>

@@ -2,9 +2,9 @@ import react, { useState } from "react";
 import "../assets/ourplan.css"
 
 const OurPlan = () => {
-    const [flipped1, setFlipped1] = useState(false);
-    const [flipped2, setFlipped2] = useState(false);
-    const [flipped3, setFlipped3] = useState(false);
+    const [flipped1, setFlipped1] = useState(true);
+    const [flipped2, setFlipped2] = useState(true);
+    const [flipped3, setFlipped3] = useState(true);
 
     const handleFlip1 = () => {
         setFlipped1(!flipped1);
@@ -17,9 +17,27 @@ const OurPlan = () => {
     const handleFlip3 = () => {
         setFlipped3(!flipped3);
     };
+
+    function sendEmail(jenis) {
+        const email = "example@example.com";
+        const subject = `Saya mau plan ${jenis}`;
+        const body = `Halo, saya mau plan ${jenis}.`;
+        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, '_blank');
+        if (jenis == "regular") {
+           return setFlipped1(!flipped1);
+        }
+        else if (jenis == "standard") {
+            return setFlipped2(!flipped2);
+        }
+        else {
+           return  setFlipped3(!flipped3);
+        }
+    }
+
     return (
         <div>
-            <h1 align="center" className="mb-4 pricingTitle">
+            <h1 align="center" className="mb-4 pricingTitle" id="plan">
                 Pricing
             </h1>
             <div className="col">
@@ -96,7 +114,7 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={handleFlip1}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={()=>sendEmail("regular")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +192,7 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={handleFlip2}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={()=>sendEmail("standard")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +225,7 @@ const OurPlan = () => {
                                     </div>
                                 </div>
                                 <div className="customCardFooter" align="center">
-                                <button className="startNowPlan" onClick={handleFlip3}>Learn More</button>
+                                    <button className="startNowPlan" onClick={handleFlip3}>Learn More</button>
                                 </div>
                                 <div className="floatingTextPlan3">
                                     BEST OFFER
@@ -251,7 +269,7 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={handleFlip3}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={()=>sendEmail("special")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>

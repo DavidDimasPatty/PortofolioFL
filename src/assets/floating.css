@@ -20,6 +20,7 @@
     border-radius: 20%;
     -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
     animation: pulsate-fwd 0.5s ease-in-out infinite both;
+    cursor: pointer;
 }
 
 .rowUp {

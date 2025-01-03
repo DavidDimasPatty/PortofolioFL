@@ -3,9 +3,18 @@ import "../assets/footer.css";
 import logoTFC from "../assets/image/logoTFC.png"
 import Marquee from "react-fast-marquee";
 const Footer = () => {
+    const phoneNumber = "6281311974915";
+    const defaultMessage = "Halo, saya tertarik dengan layanan Anda.";
+    const openWhatsApp = () => {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const url = isMobile
+            ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}` // Aplikasi WhatsApp
+            : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(defaultMessage)}`; // WhatsApp Web
 
+        window.open(url, "_blank");
+    };
     return (
-        <div className="footer">
+        <div className="footer" id="footer">
             <div className="col d-flex justify-content-start pb-5">
                 <div className="row footerBridge mt-5">
                     <div className="col d-flex justify-content-center align-items-center">
@@ -17,7 +26,7 @@ const Footer = () => {
                             <h5 className="w-75 mb-4">Kami percaya semua orang berhak mendapatkan cita-citanya terwujud. Kami berusaha ada disitu untuk membantu anda.</h5>
                             <h5 className="w-25 mb-4"></h5>
                             <div className="wrapperCall">
-                                <button className="btn btn-light buttonCall">Hubungi Kami</button>
+                                <button className="btn btn-light buttonCall" onClick={openWhatsApp}>Hubungi Kami</button>
                             </div>
                         </div>
                     </div>
