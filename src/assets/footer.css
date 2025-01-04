@@ -2,6 +2,7 @@
     background-color: black;
     bottom: 0;
     width: 100% !important;
+    padding: 20px;
 }
 
 .footerHeader {
@@ -21,12 +22,12 @@
     border-top: white solid;
     width: 100%;
     color: white;
-    
+
 }
 
 .borderSpaceEnd h5 {
     margin-top: 15px;
-    margin-right: 50px; 
+    margin-right: 50px;
 }
 
 .footerEnd {
@@ -103,15 +104,13 @@
     transform: translateY(0);
 }
 
-.imgFooter {}
-
 .footerBridge {
     width: 100%;
     color: white;
 }
 
 .wrapperCall {
-    width: 200px;
+    width: 75%;
 }
 
 
@@ -175,7 +174,7 @@
     transform: translateY(.125rem);
 }
 
-.buttonFooterLink{
+.buttonFooterLink {
     border: 1px solid white;
     background-color: black;
     border-radius: 20px;
@@ -186,4 +185,85 @@
     height: 30px;
     white-space: nowrap;
     padding: 0 10px;
+}
+
+.wrapperCall {
+    width: 100%;
+    text-align: center;
+}
+
+.wrapperwordBottom {
+    margin: 0px 0px;
+}
+
+.wordBottom {
+    width: 100%;
+    justify-content: start;
+}
+
+.wordBottom h1 {
+    width: 100%;
+}
+
+.wordBottom h5 {
+    width: 100%;
+}
+
+.corps {
+    display: flex;
+    margin: 0px 20px;
+}
+
+.corps h1 {
+    font-size: calc(2rem + 1.8vw);
+    margin: 0;
+}
+
+.footerCloseC1 {
+    border-right: 2px solid white;
+}
+
+.footerCloseC2 {
+    border-right: 2px solid white;
+}
+
+
+@media (max-width: 1200px) {
+    .wrapperCall {
+        width: 100%;
+        text-align: center;
+    }
+
+    .wordBottom {
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .wordBottom h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .wordBottom h5 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .corps h1 {
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .corps {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px;
+    }
+
+    .imgFooterWrapper {
+        justify-content: center;
+    }
 }

@@ -20,6 +20,7 @@ const Home = () => {
     const [frontWelcome, setFrontWelcome] = useState(true);
     const [isChecked, setIsChecked] = useState(false);
     const [lastClickTime, setLastClickTime] = useState(Date.now());
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleFront = () => {
         setFrontWelcome(!frontWelcome);
@@ -29,6 +30,9 @@ const Home = () => {
         setIsChecked(checked);
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
     useEffect(() => {
         const timer = setTimeout(() => {
             toggleFront();
@@ -38,8 +42,10 @@ const Home = () => {
     }, [lastClickTime]);
 
     return (
-        <div className="wrapper-all">
-            <HeaderNav onCheckboxChange={handleCheckboxChange} />
+        <div className={`wrapper-all ${isMenuOpen?'menuOpen':''}`}>
+            <HeaderNav onCheckboxChange={handleCheckboxChange} 
+            onMenuOpen={toggleMenu}
+             isMenuOpen={isMenuOpen} />
             <div className={`frontWelcome ${frontWelcome ? "active" : "hidden"}`}>
                 <div className="d-flex frontContent align-items-center justify-content-around">
                     <div className="row align-items-center justify-content-center content-left-front">

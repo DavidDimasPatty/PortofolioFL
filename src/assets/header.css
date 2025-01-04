@@ -82,6 +82,9 @@
     list-style: none;
     display: flex;
     margin-top: 10px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .nav-links ul {
@@ -117,6 +120,15 @@
 }
 
 .burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn {
     display: none;
     background: none;
     border: none;
@@ -302,23 +314,48 @@
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex; 
         position: absolute;
-        top: 50px;
+        top: -10px;
         right: 0px;
         background-color: #333;
-        padding: 10px;
+        padding: 60px 0px;
         border-radius: 5px;
-        width: 200px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        height: 100vh;
+        font-size: 30px;
+        transition: 0.5s ease all;
+        opacity: 0; 
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none; 
+    }
+
+
+    .nav-links a.scrolled {
+        color: white;
     }
 
     .nav-links.open {
         display: block;
+        opacity: 1; 
+        transform: translateY(0); 
+        pointer-events: auto;
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .burger-btn {
         display: block;
+    }
+
+    .burger-btn.open {
+        display: none;
+    }
+
+    .close-btn.open {
+        display: block;
+        z-index: 90;
     }
 
     .burger-btn.scrolled {
@@ -336,11 +373,26 @@
         text-align: center;
     }
 
-    .toggle-button-cover{
+    .toggle-button-cover {
         color: white;
     }
 
-    .toggle-button-cover.scrolled{
+    .toggle-button-cover.scrolled {
         color: black;
+    }
+
+
+    .knobs {
+        color: white;
+        font-size: 15px;
+    }
+
+    #button-10 .checkbox:checked~.knobs::after {
+        color: white;
+        font-size: 15px;
+    }
+
+    .getStarted{
+        display: none;
     }
 }

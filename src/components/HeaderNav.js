@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import "../assets/header.css";
 import logoTFC from "../assets/image/logoTFC.png"
 
-const HeaderNav = ({ onCheckboxChange }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const HeaderNav = ({ onCheckboxChange, onMenuOpen, isMenuOpen }) => {
     const [isScrolled, setIsScrolled] = useState(false);
-   
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+
+    const toggleMenu = (event) => {
+        onMenuOpen(!isMenuOpen);
     };
 
     const handleChange = (event) => {
@@ -25,6 +24,16 @@ const HeaderNav = ({ onCheckboxChange }) => {
         }
     }
 
+    const handleMenuOpen = () => {
+        const horizontalScrollThresholdInPx = 768;
+        if (window.scrollX > horizontalScrollThresholdInPx) {
+            onMenuOpen(false);
+        }
+        else {
+            onMenuOpen(isMenuOpen);
+        }
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -38,10 +47,12 @@ const HeaderNav = ({ onCheckboxChange }) => {
             <div className={`logo${isScrolled ? '-scrolled' : ' '} d-flex justify-content-center align-items-center`} id="logo">
                 <img src={logoTFC} width={"60px"} />
             </div>
-            <button className={`burger-btn ${isScrolled?`scrolled` : ''}`} onClick={toggleMenu}>
+            <button className={`burger-btn ${isScrolled ? `scrolled` : ''} ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 ☰
             </button>
-
+            <button className={`close-btn ${isScrolled ? `scrolled` : ''}  ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                X
+            </button>
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
                     <li>
@@ -63,7 +74,7 @@ const HeaderNav = ({ onCheckboxChange }) => {
                         <div className={`toggle-button-cover ${isScrolled ? 'scrolled' : ' '}`} >
                             <div class="button-cover">
                                 <div class="butSWitch" id="button-10">
-                                    <input type="checkbox" class="checkbox" onChange={handleChange}/>
+                                    <input type="checkbox" class="checkbox" onChange={handleChange} />
                                     <div class="knobs">
                                         <span>EN</span>
                                     </div>
@@ -73,7 +84,7 @@ const HeaderNav = ({ onCheckboxChange }) => {
                         </div>
                     </li>
                     <li>
-                        {isMenuOpen ? "Get Started" : <button className={`${isScrolled ? 'getStarted scrolled' : 'getStarted'}`} onClick={()=>window.location.href="#plan"}>Get Started</button>}
+                        {isMenuOpen ? <a href="#plan" className={`${isScrolled ? 'scrolled' : ' '}`} >Get Started</a> : <button className={`${isScrolled ? 'getStarted scrolled' : 'getStarted'}`} onClick={() => window.location.href = "#plan"}>Get Started</button>}
                     </li>
                 </ul>
             </nav>
