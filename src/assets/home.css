@@ -371,11 +371,16 @@
 
 .wrapButtonHeader {
     width: 100%;
+}
 
+.wrapButtonHeader2 {
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 70px;
 }
 
 .button-contact {
-    display: inline-flex;
+    display: block;
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
     align-items: center;
@@ -459,23 +464,28 @@
 }
 
 .button-plan {
+    display: block;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
     text-transform: uppercase;
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
     letter-spacing: 1.3px;
     font-weight: 700;
     color: #313133;
-    width: max-content;
     position: relative;
     z-index: 1;
     transition: all 0.5s ease-in-out;
     background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
-    padding: 0 20px;
-    overflow: hidden;
+    padding: 0 30px;
     border: none;
     border-radius: 1000px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+    min-width: 200px;
 }
 
 .button-plan:before {
@@ -647,6 +657,14 @@
     width: 100%;
 }
 
+.wrap2ButtonHeader {
+    justify-content: end;
+}
+
+.wrap1ButtonHeader {
+    justify-content: end;
+}
+
 @media (max-width: 1068px) {
     .colCarrousel {
         display: none;
@@ -660,5 +678,22 @@
     .header-text2 h1 {
         font-size: calc(1rem + 1vw);
         text-align: center;
+    }
+
+    .wrap1ButtonHeader {
+        justify-content: center;
+        margin: 20px 0;
+        width: 100vw;
+    }
+
+    .wrap2ButtonHeader {
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .wrapButtonHeader2 {
+        flex-wrap: wrap;
+        justify-content: end;
+        gap:10px;
     }
 }

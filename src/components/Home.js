@@ -69,11 +69,11 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <div className="row d-flex justify-content-end align-items-center gap-3 wrapButtonHeader">
-                                <div className="col d-flex justify-content-center">
+                            <div className="row d-flex wrapButtonHeader2">
+                                <div className="col-md-4 d-flex wrap1ButtonHeader">
                                     <button className="btn btn-dark button-contact" onClick={() => window.location.href = "#footer"}>Contact Us!</button>
                                 </div>
-                                <div className="col d-flex justify-content-center">
+                                <div className="col-md-4 d-flex  wrap2ButtonHeader">
                                     <button className="btn btn-dark button-plan" onClick={() => window.location.href = "#plan"}><span>Our Plan</span></button>
                                 </div>
                             </div>
