@@ -17,6 +17,7 @@
     z-index: 888;
     -webkit-animation: AnimationFade 0.5s ease forwards;
     animation: AnimationFade 0.5s ease forwards;
+    border-radius: 0 0 20px 20px;
 }
 
 @keyframes AnimationFadeOut {
@@ -55,7 +56,7 @@
 .header.scrolled {
     -webkit-animation: AnimationFadeOut 0.5s ease forwards;
     animation: AnimationFadeOut 0.5s ease forwards;
-    background-color: none;
+    background-color: white  !important;
 }
 
 .header a {
