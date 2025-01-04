@@ -57,23 +57,30 @@ const Home = () => {
             <div className="mainHome">
                 <div className="homeHeader">
                     <div className="contentHomeHeader row d-flex justify-content-center align-items-center">
-                        <div className="col justify-content-center align-items-center p-5">
+                        <div className="col-md-6 row justify-content-end align-items-center p-5">
 
-                            <div className="row-md-6 mb-3 text-nowrap header-text1">
-                                <h1>{isChecked ? 'Bikin Aplikasi Murah dan Terpercaya?' : 'Build Cheap and Trusted Application?'}</h1>
+                            <div className="row d-flex justify-content-center align-items-center wrapButtonHeader">
+                                <div className="row-md-6 mb-3 header-text1">
+                                    <h1>{isChecked ? 'Bikin Aplikasi Murah dan Terpercaya?' : 'Build Cheap and Trusted Application?'}</h1>
+                                </div>
+
+                                <div className="row-md-6 mb-3 header-text2">
+                                    <h1>{isChecked ? 'Gass Aja Disini!!!' : 'We Can Provide That!!'}</h1>
+                                </div>
                             </div>
 
-                            <div className="row-md-5 mb-5 header-text2">
-                                <h1>{isChecked ? 'Gass Aja Disini!!!' : 'We Can Provide That!!'}</h1>
-                            </div>
-
-                            <div className="row-md-5 d-flex justify-content-start align-items-center gap-5">
-                                <button className="btn btn-dark button-contact" onClick={()=>window.location.href="#footer"}>Contact Us!</button>
-                                <button className="btn btn-dark button-plan" onClick={()=>window.location.href="#plan"}><span>See Our Plan</span></button>
+                            <div className="row d-flex justify-content-end align-items-center gap-3 wrapButtonHeader">
+                                <div className="col d-flex justify-content-center">
+                                    <button className="btn btn-dark button-contact" onClick={() => window.location.href = "#footer"}>Contact Us!</button>
+                                </div>
+                                <div className="col d-flex justify-content-center">
+                                    <button className="btn btn-dark button-plan" onClick={() => window.location.href = "#plan"}><span>Our Plan</span></button>
+                                </div>
                             </div>
 
                         </div>
-                        <div className="col colCarrousel">
+
+                        <div className="col-md-4 colCarrousel">
                             <Carousel
                                 showArrows={false}
                                 showIndicators={false}
