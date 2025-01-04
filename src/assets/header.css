@@ -55,7 +55,7 @@
 .header.scrolled {
     -webkit-animation: AnimationFadeOut 0.5s ease forwards;
     animation: AnimationFadeOut 0.5s ease forwards;
-    background-color: #333;
+    background-color: none;
 }
 
 .header a {
@@ -84,7 +84,6 @@
     margin-top: 10px;
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .nav-links ul {
@@ -138,6 +137,7 @@
 }
 
 .getStarted {
+    visibility: visible;
     padding: 0.6em 2em;
     border: none;
     outline: none;
@@ -314,7 +314,7 @@
 
 @media (max-width: 768px) {
     .nav-links {
-        display: flex; 
+        visibility: hidden;
         position: absolute;
         top: -10px;
         right: 0px;
@@ -326,10 +326,10 @@
         height: 100vh;
         font-size: 30px;
         transition: 0.5s ease all;
-        opacity: 0; 
+        opacity: 0;
         transform: translateY(-20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        pointer-events: none; 
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
     }
 
 
@@ -338,9 +338,10 @@
     }
 
     .nav-links.open {
+        visibility: visible;
         display: block;
-        opacity: 1; 
-        transform: translateY(0); 
+        opacity: 1;
+        transform: translateY(0);
         pointer-events: auto;
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
@@ -374,13 +375,19 @@
     }
 
     .toggle-button-cover {
+        visibility: hidden;
+        display: none;
+    }
+
+    .toggle-button-cover.open{
         color: white;
+        visibility: visible;
+        display: block;
     }
 
     .toggle-button-cover.scrolled {
         color: black;
     }
-
 
     .knobs {
         color: white;
@@ -388,11 +395,68 @@
     }
 
     #button-10 .checkbox:checked~.knobs::after {
-        color: white;
+        color: black;
         font-size: 15px;
     }
 
-    .getStarted{
-        display: none;
+    .getStarted {
+        -webkit-animation: none;
+        animation:none;
+        border: none;
+        background: none;
+        white-space: nowrap;
+        visibility: hidden;
+    }
+
+    .getStarted.open{
+        visibility: visible;
+    }
+
+    .getStarted:before {
+        content: "";
+        background: none;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border-radius: 10px;
+    }
+
+
+    .getStarted:after {
+        z-index: 0;
+        content: "";
+        background-color: transparent;
+        position: relative;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+
+    .getStarted.scrolled {
+        background-color: transparent;
+        color: white;
+    }
+    
+    .getStarted.scrolled::after {
+        background-color: transparent;
+    }
+
+    .header.open {
+        background-color: transparent;
+    }
+
+    .knobs {
+        color: black;
+    }
+
+    .header.open{
+        background-color: transparent !important;
     }
 }

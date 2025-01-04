@@ -24,15 +24,6 @@ const HeaderNav = ({ onCheckboxChange, onMenuOpen, isMenuOpen }) => {
         }
     }
 
-    const handleMenuOpen = () => {
-        const horizontalScrollThresholdInPx = 768;
-        if (window.scrollX > horizontalScrollThresholdInPx) {
-            onMenuOpen(false);
-        }
-        else {
-            onMenuOpen(isMenuOpen);
-        }
-    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -43,7 +34,7 @@ const HeaderNav = ({ onCheckboxChange, onMenuOpen, isMenuOpen }) => {
     }, []);
 
     return (
-        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'open' : ''}`}>
             <div className={`logo${isScrolled ? '-scrolled' : ' '} d-flex justify-content-center align-items-center`} id="logo">
                 <img src={logoTFC} width={"60px"} />
             </div>
@@ -56,22 +47,22 @@ const HeaderNav = ({ onCheckboxChange, onMenuOpen, isMenuOpen }) => {
             <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
                     <li>
-                        <a href="#tentangKami" className={`${isScrolled ? 'scrolled' : ' '}`}>
+                        <a href="#tentangKami" className={`${isScrolled ? 'scrolled' : ' '}`} onClick={() => onMenuOpen(false)}>
                             Tentang Kami
                         </a>
                     </li>
                     <li>
-                        <a href="#ourService" className={`${isScrolled ? 'scrolled' : ' '}`}>
+                        <a href="#ourService" className={`${isScrolled ? 'scrolled' : ' '}`} onClick={() => onMenuOpen(false)}>
                             Layanan
                         </a>
                     </li>
                     <li>
-                        <a href="#FAQ" className={`${isScrolled ? 'scrolled' : ' '}`} >
+                        <a href="#FAQ" className={`${isScrolled ? 'scrolled' : ' '}`} onClick={() => onMenuOpen(false)}>
                             FAQ
                         </a>
                     </li>
                     <li>
-                        <div className={`toggle-button-cover ${isScrolled ? 'scrolled' : ' '}`} >
+                        <div className={`toggle-button-cover ${isScrolled ? 'scrolled ' : ' '}  ${isMenuOpen?' open ':' '}`} >
                             <div class="button-cover">
                                 <div class="butSWitch" id="button-10">
                                     <input type="checkbox" class="checkbox" onChange={handleChange} />
@@ -84,7 +75,7 @@ const HeaderNav = ({ onCheckboxChange, onMenuOpen, isMenuOpen }) => {
                         </div>
                     </li>
                     <li>
-                        {isMenuOpen ? <a href="#plan" className={`${isScrolled ? 'scrolled' : ' '}`} >Get Started</a> : <button className={`${isScrolled ? 'getStarted scrolled' : 'getStarted'}`} onClick={() => window.location.href = "#plan"}>Get Started</button>}
+                         <button className={`${isScrolled ? 'getStarted scrolled ' : 'getStarted '} ${isMenuOpen?'open':''}`} onClick={()=>{window.location.href="#plan";onMenuOpen(false);}}>Get Started</button>
                     </li>
                 </ul>
             </nav>
