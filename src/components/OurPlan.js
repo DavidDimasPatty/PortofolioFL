@@ -1,10 +1,12 @@
-import react, { useState } from "react";
+import react, { useState, useRef, useEffect } from "react";
 import "../assets/ourplan.css"
 
 const OurPlan = () => {
     const [flipped1, setFlipped1] = useState(true);
     const [flipped2, setFlipped2] = useState(true);
     const [flipped3, setFlipped3] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = useRef(null);
 
     const handleFlip1 = () => {
         setFlipped1(!flipped1);
@@ -25,15 +27,39 @@ const OurPlan = () => {
         const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink, '_blank');
         if (jenis == "regular") {
-           return setFlipped1(!flipped1);
+            return setFlipped1(!flipped1);
         }
         else if (jenis == "standard") {
             return setFlipped2(!flipped2);
         }
         else {
-           return  setFlipped3(!flipped3);
+            return setFlipped3(!flipped3);
         }
     }
+
+    const handleScroll = () => {
+        if (cardRef.current) {
+            const { top, bottom } = cardRef.current.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const isMobile = window.innerWidth <= 768; // Anggap 768px sebagai batas mobile
+            const offset = isMobile ? -600 : 100; 
+            if (top < windowHeight - offset && bottom > 0) {
+                setIsVisible(true);
+            }
+            else {
+                setIsVisible(false);
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <div>
@@ -43,7 +69,7 @@ const OurPlan = () => {
             <div className="col">
                 <div className="wrapperContainer row d-flex justify-content-center align-items-center gap-5">
 
-                    <div className={`card-container ${flipped1 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2`}>
+                    <div className={`card-container ${flipped1 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2 ${isVisible ? 'visible' : ''}`} ref={cardRef}>
                         <div className="cardFlipper">
                             <div className="customCard">
                                 <div className="customCardHeader">
@@ -114,7 +140,7 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={()=>sendEmail("regular")}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={() => sendEmail("regular")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +148,7 @@ const OurPlan = () => {
                     </div>
 
 
-                    <div className={`card-container ${flipped2 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2`}>
+                    <div className={`card-container ${flipped2 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2 ${isVisible ? 'visible' : ''}`} ref={cardRef}>
                         <div className="cardFlipper">
                             <div className="customCard2">
                                 <div className="customCardHeader">
@@ -192,14 +218,14 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={()=>sendEmail("standard")}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={() => sendEmail("standard")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className={`card-container ${flipped3 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2`}>
+                    <div className={`card-container ${flipped3 ? '' : 'active'} col-md-3 d-flex justify-content-center align-items-center gap-2 ${isVisible ? 'visible' : ''}`} ref={cardRef}>
                         <div className="cardFlipper">
                             <div className="customCard3">
                                 <div className="customCardHeader">
@@ -269,7 +295,7 @@ const OurPlan = () => {
                                         </ul>
                                     </div>
                                     <div className="d-flex justify-content-center wrapEmailBtn">
-                                        <button className="EmailBtn" onClick={()=>sendEmail("special")}>Arrange Meet</button>
+                                        <button className="EmailBtn" onClick={() => sendEmail("special")}>Arrange Meet</button>
                                     </div>
                                 </div>
                             </div>
