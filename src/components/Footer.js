@@ -47,9 +47,10 @@ const Footer = () => {
                 <div className="col-md-3 footerCloseC1">
                     <div className="header1Footer">GENERAL INFORMATIONS</div>
                     <div className="col">
-                        <button className="buttonFooterLink">Our Service</button>
-                        <button className="buttonFooterLink">Why Us?</button>
-                        <button className="buttonFooterLink">Our Working Process</button>
+                        <button className="buttonFooterLink" onClick={()=>window.location.href="#ourService"}>Our Service</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#whyTFC"}>Why Us?</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#tentangKami"}>Our Working Process</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#plan"}>Our Plan</button>
                     </div>
                 </div>
                 <div className="col-md-4 footerCloseC2">

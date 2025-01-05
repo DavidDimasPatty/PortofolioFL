@@ -49,7 +49,7 @@ const Home = () => {
             <div className={`frontWelcome ${frontWelcome ? "active" : "hidden"}`}>
                 <div className="d-flex frontContent align-items-center justify-content-around">
                     <div className="row align-items-center justify-content-center content-left-front">
-                        <div className="row">
+                        <div className="row-md-6">
                             <h3 className="nameFront">TriFusionCode</h3>
                             <small className="descFront">Make your applications come true!</small>
                         </div>
@@ -130,6 +130,7 @@ const Home = () => {
                     <div className="col">
                         <div id="ourService" />
                         <OurService />
+                        <div id="whyTFC" />
                         <WhyTfc />
                         <OurPlan />
                         <div id="tentangKami" />

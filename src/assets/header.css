@@ -15,22 +15,9 @@
     position: fixed;
     width: 100%;
     z-index: 888;
-    -webkit-animation: AnimationFade 0.5s ease forwards;
-    animation: AnimationFade 0.5s ease forwards;
+    transition: background-color 0.5s ease, color 0.5s ease;
     border-radius: 0 0 20px 20px;
 }
-
-@keyframes AnimationFadeOut {
-    0% {
-        background-color: transparent
-    }
-
-    100% {
-        background-color: white;
-        color: black;
-    }
-}
-
 
 @keyframes AnimationFadeButton {
     0% {
@@ -42,21 +29,10 @@
     }
 }
 
-@keyframes AnimationFade {
-    0% {
-        background-color: white;
-    }
-
-    100% {
-        background-color: transparent;
-    }
-}
-
 
 .header.scrolled {
-    -webkit-animation: AnimationFadeOut 0.5s ease forwards;
-    animation: AnimationFadeOut 0.5s ease forwards;
-    background-color: white  !important;
+    background-color: white;
+    color: black;
 }
 
 .header a {
@@ -380,7 +356,7 @@
         display: none;
     }
 
-    .toggle-button-cover.open{
+    .toggle-button-cover.open {
         color: white;
         visibility: visible;
         display: block;
@@ -402,14 +378,14 @@
 
     .getStarted {
         -webkit-animation: none;
-        animation:none;
+        animation: none;
         border: none;
         background: none;
         white-space: nowrap;
         visibility: hidden;
     }
 
-    .getStarted.open{
+    .getStarted.open {
         visibility: visible;
     }
 
@@ -444,7 +420,7 @@
         background-color: transparent;
         color: white;
     }
-    
+
     .getStarted.scrolled::after {
         background-color: transparent;
     }
@@ -457,7 +433,7 @@
         color: black;
     }
 
-    .header.open{
+    .header.open {
         background-color: transparent !important;
     }
 }
