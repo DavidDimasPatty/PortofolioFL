@@ -1,11 +1,8 @@
 .our-working-process-section {
-    background: linear-gradient(45deg, #023047, #8ecae6, #219ebc);
-    /* background: linear-gradient(45deg, #8ecae6, #219ebc, #023047); */
-    background-size: 300% 300%;
-    animation: gradientAnimation 3s ease infinite;
-    /* background-color: #8ecae6; */
-    /* background-color: white; */
-    /* background: linear-gradient(145deg, #219ebc, #8ecae6); */
+    /* background: linear-gradient(45deg, #023047, #8ecae6, #219ebc); */
+    /* background-size: 300% 300%; */
+    /* animation: gradientAnimation 3s ease infinite; */
+    background: linear-gradient(90deg, #023047, #8ecae6, #219ebc);
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -25,66 +22,29 @@
     }
 }
 
-.card-process {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+.wave-owp {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    overflow: hidden;
 }
 
-.card-process:hover {
-    transform: translateY(-5px);
+.wave-top-owp {
+    top: 5px;
+    transform: rotate(180deg);
+    backface-visibility: hidden; /* Mencegah rendering artefak */
+    will-change: transform;
+    bottom: 0;
+    margin-top: 80px;
 }
 
-.step-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-}
-
-/* Card content */
-.step-card .card-body {
-    padding: 20px;
-}
-
-.step-card .card-body h5 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.step-card .card-body p {
-    font-size: 0.9rem;
-}
-
-.steps-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    /* Menambahkan gap antar card */
-}
-
-/* Responsif untuk tampilan layar kecil */
-@media (max-width: 768px) {
-    .steps-container {
-        justify-content: space-around;
-    }
-
-    .step-card {
-        width: 100%;
-        max-width: 300px;
-        /* Membatasi lebar card pada layar kecil */
-    }
-}
-
-/* Responsif untuk tampilan layar besar */
-@media (min-width: 768px) {
-    .step-card {
-        width: 300px;
-    }
-}
+.wave-bottom-owp {
+    bottom: 0;
+    backface-visibility: hidden; /* Mencegah rendering artefak */
+    will-change: transform;
+    top: -10px;
+} 
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
 

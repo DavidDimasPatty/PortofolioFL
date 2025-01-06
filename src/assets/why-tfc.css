@@ -42,6 +42,7 @@
     backface-visibility: hidden; /* Mencegah rendering artefak */
     will-change: transform;
     top: -10px;
+    margin-bottom: 50px;
 }
 
 /* Animasi Gradien */
