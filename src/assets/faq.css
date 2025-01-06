@@ -18,7 +18,7 @@
         align-items: center;
         justify-content: space-between;
         /* background: linear-gradient(-45deg, rgb(46, 59, 180) 10%, rgb(129, 156, 230) 90%); */
-        background: linear-gradient(-45deg, rgb(46, 104, 180) 10%, rgba(129, 230, 217, 1) 90%);
+        background: linear-gradient(-45deg, rgb(56, 128, 222) 10%, rgb(78, 142, 133) 90%);
         border-radius: 25px;
         padding: 45px 90px 0 60px;
     }

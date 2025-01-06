@@ -2,7 +2,7 @@
     /* background: linear-gradient(45deg, #023047, #8ecae6, #219ebc); */
     /* background-size: 300% 300%; */
     /* animation: gradientAnimation 3s ease infinite; */
-    background: linear-gradient(90deg, #023047, #8ecae6, #219ebc);
+    background: linear-gradient(90deg, #0d5c84, #8ecae6, #219ebc);
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -52,6 +52,7 @@
 
     font-family: 'Raleway', sans-serif;
     color: #023047;
+    padding-bottom: 90px;
 
     header h1 {
         text-align: center;
