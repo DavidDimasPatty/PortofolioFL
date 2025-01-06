@@ -13,11 +13,12 @@
 
     .accordion {
         display: flex;
-        max-width: 1010px;
+        max-width: 1400px;
         width: 100%;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(-45deg, rgb(46, 59, 180) 10%, rgb(129, 156, 230) 90%);
+        /* background: linear-gradient(-45deg, rgb(46, 59, 180) 10%, rgb(129, 156, 230) 90%); */
+        background: linear-gradient(-45deg, rgb(46, 104, 180) 10%, rgba(129, 230, 217, 1) 90%);
         border-radius: 25px;
         padding: 45px 90px 0 60px;
     }
@@ -44,7 +45,7 @@
     .accordion .accordion-text .title {
         font-size: 35px;
         font-weight: bold;
-        color: #023047;
+        color: white;
     }
 
     .accordion .accordion-text .faq-text {
