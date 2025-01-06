@@ -15,21 +15,9 @@
     position: fixed;
     width: 100%;
     z-index: 888;
-    -webkit-animation: AnimationFade 0.5s ease forwards;
-    animation: AnimationFade 0.5s ease forwards;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    border-radius: 0 0 20px 20px;
 }
-
-@keyframes AnimationFadeOut {
-    0% {
-        background-color: transparent
-    }
-
-    100% {
-        background-color: white;
-        color: black;
-    }
-}
-
 
 @keyframes AnimationFadeButton {
     0% {
@@ -41,21 +29,10 @@
     }
 }
 
-@keyframes AnimationFade {
-    0% {
-        background-color: white;
-    }
-
-    100% {
-        background-color: transparent;
-    }
-}
-
 
 .header.scrolled {
-    -webkit-animation: AnimationFadeOut 0.5s ease forwards;
-    animation: AnimationFadeOut 0.5s ease forwards;
-    background-color: #333;
+    background-color: white;
+    color: black;
 }
 
 .header a {
@@ -82,6 +59,8 @@
     list-style: none;
     display: flex;
     margin-top: 10px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .nav-links ul {
@@ -125,7 +104,17 @@
     cursor: pointer;
 }
 
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
 .getStarted {
+    visibility: visible;
     padding: 0.6em 2em;
     border: none;
     outline: none;
@@ -302,23 +291,49 @@
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        visibility: hidden;
         position: absolute;
-        top: 50px;
+        top: -10px;
         right: 0px;
         background-color: #333;
-        padding: 10px;
+        padding: 60px 0px;
         border-radius: 5px;
-        width: 200px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        height: 100vh;
+        font-size: 30px;
+        transition: 0.5s ease all;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+    }
+
+
+    .nav-links a.scrolled {
+        color: white;
     }
 
     .nav-links.open {
+        visibility: visible;
         display: block;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .burger-btn {
         display: block;
+    }
+
+    .burger-btn.open {
+        display: none;
+    }
+
+    .close-btn.open {
+        display: block;
+        z-index: 90;
     }
 
     .burger-btn.scrolled {
@@ -336,11 +351,89 @@
         text-align: center;
     }
 
-    .toggle-button-cover{
+    .toggle-button-cover {
+        visibility: hidden;
+        display: none;
+    }
+
+    .toggle-button-cover.open {
+        color: white;
+        visibility: visible;
+        display: block;
+    }
+
+    .toggle-button-cover.scrolled {
+        color: black;
+    }
+
+    .knobs {
+        color: white;
+        font-size: 15px;
+    }
+
+    #button-10 .checkbox:checked~.knobs::after {
+        color: black;
+        font-size: 15px;
+    }
+
+    .getStarted {
+        -webkit-animation: none;
+        animation: none;
+        border: none;
+        background: none;
+        white-space: nowrap;
+        visibility: hidden;
+    }
+
+    .getStarted.open {
+        visibility: visible;
+    }
+
+    .getStarted:before {
+        content: "";
+        background: none;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border-radius: 10px;
+    }
+
+
+    .getStarted:after {
+        z-index: 0;
+        content: "";
+        background-color: transparent;
+        position: relative;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+
+    .getStarted.scrolled {
+        background-color: transparent;
         color: white;
     }
 
-    .toggle-button-cover.scrolled{
+    .getStarted.scrolled::after {
+        background-color: transparent;
+    }
+
+    .header.open {
+        background-color: transparent;
+    }
+
+    .knobs {
         color: black;
+    }
+
+    .header.open {
+        background-color: transparent !important;
     }
 }

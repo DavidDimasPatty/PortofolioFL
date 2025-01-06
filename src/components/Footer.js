@@ -3,7 +3,7 @@ import "../assets/footer.css";
 import logoTFC from "../assets/image/logoTFC.png"
 import Marquee from "react-fast-marquee";
 const Footer = () => {
-    const phoneNumber = "6281311974915";
+    const phoneNumber = "62812124";
     const defaultMessage = "Halo, saya tertarik dengan layanan Anda.";
     const openWhatsApp = () => {
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -15,75 +15,46 @@ const Footer = () => {
     };
     return (
         <div className="footer" id="footer">
-            <div className="col d-flex justify-content-start pb-5">
-                <div className="row footerBridge mt-5">
-                    <div className="col d-flex justify-content-center align-items-center">
+            <div className="col d-flex  pb-5">
+                <div className="row footerBridge mt-5 gap-4">
+                    <div className="col-md-3 d-flex  align-items-center imgFooterWrapper">
                         <img src={logoTFC} className="imgFooter" />
                     </div>
-                    <div className="col d-flex justify-content-center align-items-center">
-                        <div className="row">
-                            <h1 className="w-75 mb-4">Make Your Dream Application Comes True!</h1>
-                            <h5 className="w-75 mb-4">Kami percaya semua orang berhak mendapatkan cita-citanya terwujud. Kami berusaha ada disitu untuk membantu anda.</h5>
-                            <h5 className="w-25 mb-4"></h5>
-                            <div className="wrapperCall">
+                    
+                    <div className="col-md-4 d-flex justify-content-center align-items-center wrapperwordBottom">
+                        <div className="row wordBottom">
+                            <h1 className="mb-4 text-center">Make Your Dream Application Comes True!</h1>
+                            <h5 className="mb-4">Kami percaya semua orang berhak mendapatkan cita-citanya terwujud. Kami berusaha ada disitu untuk membantu anda.</h5>
+                            <div className="wrapperCall" >
                                 <button className="btn btn-light buttonCall" onClick={openWhatsApp}>Hubungi Kami</button>
                             </div>
                         </div>
                     </div>
+
+                    <div className="col-md-4 d-flex corps align-items-center">
+                        <h1>
+                            &copy;TriFusionCode
+                        </h1>
+                    </div>
                 </div>
             </div>
 
-            <div className="row footerrow">
-                {/* <div className="col-md-6 d-flex justify-content-start">
-                    <h5><i className="bi bi-laptop text-white" /> We Help Your Dreams!</h5>
-                </div>
-                <div className="col-md-2">
-                    <div className="row">
-                        <a href="#"><h5>Our Service</h5></a>
-                        <a href="#"><h5>Why Us?</h5></a>
-                        <a href="#"><h5>Our Working Proccess</h5></a>
-                    </div>
-                </div>
-                <div className="col-md-2">
-                    <div className="row">
-                        <a href="#"><h5>Instagram</h5></a>
-                        <a href="#"><h5>Twitter</h5></a>
-                        <a href="#"><h5>Facebook</h5></a>
-                        <a href="#"><h5>LinkedIn</h5></a>
-                    </div>
-                </div>
-
-                <div className="col-md-2">
-                    <div className="row">
-                        <a href="#"><h5>FAQ</h5></a>
-                        <a href="#"><h5>Contact</h5></a>
-                    </div>
-                </div> */}
+            <div className="row footerrow nb-5">
+                <div>&nbsp;</div>
             </div>
 
-            <div className="row footerClose">
-                {/* <div className="col-md-6">
-                    TriFusionCode &#169; 2024
-                </div>
-                <div className="col-md-2">
-                    Our Section
-                </div>
-                <div className="col-md-2">
-                    Our Media Sosial
-                </div>
-                <div className="col-md-2">
-                    Help Center
-                </div> */}
-                <div className="col-md-4">
+            <div className="row footerClose gap-4">
+                <div className="col-md-3 footerCloseC1">
                     <div className="header1Footer">GENERAL INFORMATIONS</div>
                     <div className="col">
-                        <button className="buttonFooterLink">Our Service</button>
-                        <button className="buttonFooterLink">Why Us?</button>
-                        <button className="buttonFooterLink">Our Working Process</button>
+                        <button className="buttonFooterLink" onClick={()=>window.location.href="#ourService"}>Our Service</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#whyTFC"}>Why Us?</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#tentangKami"}>Our Working Process</button>
+                        <button className="buttonFooterLink"  onClick={()=>window.location.href="#plan"}>Our Plan</button>
                     </div>
                 </div>
-                <div className="col-md-4">
-                    <div className="header1Footer">Follow TFC ON SOCIAL MEDIA</div>
+                <div className="col-md-4 footerCloseC2">
+                    <div className="header1Footer">FOLLOW TFC ON SOCIAL MEDIA</div>
                     <div className="col">
                         <button className="buttonFooterLink">INSTAGRAM</button>
                         <button className="buttonFooterLink">FACEBOOK</button>
@@ -92,7 +63,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-                    TriFusionCode is a cutting-edge IT solutions provider dedicated to empowering businesses with innovative technology services. 
+                    TriFusionCode is a cutting-edge IT solutions provider dedicated to empowering businesses with innovative technology services.
                     Our mission is to bridge the gap between business challenges and digital excellence through tailored, efficient, and scalable solutions.
                 </div>
             </div>
