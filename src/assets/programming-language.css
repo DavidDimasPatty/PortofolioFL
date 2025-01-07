@@ -1,3 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+
 .programming-language-section {
+
+    font-family: 'Raleway', sans-serif;
+    color: #023047;
+
+    header h1 {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    margin: 80px 0 0 0;
+    background: #fff;
+
+    .gallery {
+        --s: 200px;
+        /* control the size */
+        --g: 10px;
+        /* control the gap */
+        display: grid;
+        place-content: start;
+        margin: calc(var(--s) + var(--g));
+        margin-top: calc(var(--s) - 7*var(--g));
+        margin-bottom: calc(var(--s) - 5*var(--g));
+    }
+
+    .gallery>.gallery-item .text-overlay{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Menempatkan teks di tengah gambar */
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .gallery>.gallery-item {
+        grid-area: 1/1;
+        width: var(--s);
+        height: 100%;
+        aspect-ratio: 1.15;
+        object-fit: cover;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+        cursor: pointer;
+        filter: grayscale(80%);
+        transition: .2s linear;
+    }
+
+    .gallery>.gallery-item:hover {
+        filter: grayscale(0);
+        z-index: 1;
+        --_t: 1.2;
+    }
+
+    .gallery>.gallery-item:nth-child(1),
+    .gallery>.gallery-item:nth-child(3) {
+        --_x: calc(-75% - .87*var(--g))
+    }
+
+    .gallery>.gallery-item:nth-child(2),
+    .gallery>.gallery-item:nth-child(4){
+        --_x: calc(75% + .87*var(--g))
+    }
+
+    .gallery>.gallery-item:nth-child(1),
+    .gallery>.gallery-item:nth-child(2){
+        --_y: calc(-50% - .5*var(--g))
+    }
+
+    .gallery>.gallery-item:nth-child(3),
+    .gallery>.gallery-item:nth-child(4){
+        --_y: calc(50% + .5*var(--g))
+    }
+
+    .gallery img {
+        filter: brightness(60%);
+    }
 
 }
