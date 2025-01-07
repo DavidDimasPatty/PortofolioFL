@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../assets/our-service.css";
 import websiteImage from "../assets/image/our-service-website.jpg"
 import mobileAppImage from "../assets/image/our-service-mobile-app.jpg"
@@ -31,13 +31,42 @@ const services = [
         image: mobileAppImage
     },
     {
-        title: "Machine Learning",
-        description: "Implement intelligent systems using advanced machine learning techniques.",
-        image: machineLearningImage
+        title: "Mobile App",
+        description: "Build user-friendly mobile apps for Android and iOS platforms.",
+        image: mobileAppImage
     }
 ];
 
 const OurService = () => {
+    const updateCardHeights = () => {
+        const cards = document.querySelectorAll(".card-service");
+        let maxHeight = 0;
+
+        // Reset height untuk menghitung ulang
+        cards.forEach(card => {
+            card.style.height = "auto"; 
+            maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
+
+        // Set semua card ke tinggi maksimum
+        cards.forEach(card => {
+            card.style.height = `${maxHeight}px`;
+        });
+    };
+
+    useEffect(() => {
+        // Jalankan pertama kali
+        updateCardHeights();
+
+        // Tambahkan event listener untuk resize
+        window.addEventListener("resize", updateCardHeights);
+
+        // Hapus event listener saat komponen dilepas
+        return () => {
+            window.removeEventListener("resize", updateCardHeights);
+        };
+    }, []);
+
     return (
         <>
             <div className="our-service-section pb-5">
@@ -53,8 +82,8 @@ const OurService = () => {
                                         alt={`${service.title} image`}
                                     />
                                     <div className="card-body">
-                                        <h5 className="card-title" style={{ color:'#023047' }}>{service.title}</h5>
-                                        <p className="card-text" style={{ color:'#023047' }}>{service.description}</p>
+                                        <h5 className="card-title" style={{ color: '#023047' }}>{service.title}</h5>
+                                        <p className="card-text" style={{ color: '#023047' }}>{service.description}</p>
                                     </div>
                                 </div>
                             </div>

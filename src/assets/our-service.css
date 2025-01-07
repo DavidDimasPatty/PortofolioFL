@@ -66,22 +66,6 @@
     color: #555555;
 }
 
-/* Menambahkan aturan responsif */
-@media (max-width: 768px) {
-    .card-service {
-        margin-bottom: 30px; /* Memberikan ruang ekstra untuk gambar melayang pada layar kecil */
-    }
-
-    .card-service .card-img-top {
-        top: -30px; /* Menyesuaikan posisi gambar pada layar kecil */
-    }
-
-    .content-service .row {
-        flex-direction: column; /* Mengatur card satu per satu pada layar kecil */
-        gap: 1rem;
-    }
-}
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
 
 .our-service-section {
